@@ -3320,9 +3320,12 @@ input, select, textarea {
 		cursor: default;
 		text-align: center;
 		z-index: 1;
-		min-height: 100vh;
 	}
-
+/* Correction photo intro plein écran */
+#intro {
+    min-height: unset !important;
+    height: auto !important;
+}
 		#intro input, #intro select, #intro textarea {
 			color: #ffffff;
 		}
