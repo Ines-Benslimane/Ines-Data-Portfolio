@@ -4833,5 +4833,8 @@ body.landing #page-wrapper:before {
     background: none !important;
     background-image: none !important;
 }
+.posts {
+    display: none !important;
+}
 
 	}
