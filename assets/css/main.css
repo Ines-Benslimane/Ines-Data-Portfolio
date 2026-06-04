@@ -4744,5 +4744,38 @@ input, select, textarea {
         width: 200px;
     }
 }
+		/* Timeline */
+.timeline {
+    border-left: 3px solid #ccc;
+    margin: 2rem 0;
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 3px solid #6c63ff;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: 5px;
+}
+
+.timeline-date {
+    font-weight: 700;
+    color: #6c63ff;
+}
+
+.timeline-item h3 {
+    margin: 0.3rem 0;
+}
+
 
 	}
