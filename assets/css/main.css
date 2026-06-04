@@ -4824,13 +4824,15 @@ input, select, textarea {
 
 		/* Désactive l'image géante du template sur la page principale */
 /* Désactive l'image géante du template */
-.image.main {
-    display: none !important;
-    background-image: none !important;
-}
-#intro .image {
+/* Désactive toutes les images de fond du template */
+.image.main,
+.image.fit,
+.banner,
+#intro .image,
+#intro:before {
     display: none !important;
     background: none !important;
+    background-image: none !important;
 }
 
 	}
