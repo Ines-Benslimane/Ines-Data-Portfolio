@@ -4823,9 +4823,14 @@ input, select, textarea {
 }
 
 		/* Désactive l'image géante du template sur la page principale */
-#intro {
-    background-image: none !important;
-	.post.featured {
+/* Désactive l'image géante du template */
+.image.main {
     display: none !important;
+    background-image: none !important;
 }
+#intro .image {
+    display: none !important;
+    background: none !important;
+}
+
 	}
