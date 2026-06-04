@@ -4822,14 +4822,13 @@ input, select, textarea {
     border: 3px solid #444 !important;
 }
 
-		/* Désactive l'image géante du template sur la page principale */
-/* Désactive l'image géante du template */
-/* Désactive toutes les images de fond du template */
+/* Désactive l'image géante du template sur la page principale */
+#banner,
+#banner:before,
 .image.main,
 .image.fit,
-.banner,
-#intro .image,
-#intro:before {
+.post.featured .image,
+body.landing #page-wrapper:before {
     display: none !important;
     background: none !important;
     background-image: none !important;
