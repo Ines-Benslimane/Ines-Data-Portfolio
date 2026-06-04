@@ -33,6 +33,11 @@ footer, header, hgroup, menu, nav, section {
     background-color: #eef4ff !important;
 }
 
+/* Désactivation du voile sombre */
+body:before {
+    background: none !important;
+}
+
 
 body {
 	line-height: 1;
