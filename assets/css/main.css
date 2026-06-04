@@ -4836,5 +4836,10 @@ body.landing #page-wrapper:before {
 .posts {
     display: none !important;
 }
+/* Supprime l'image de fond du template sur l'intro */
+#intro {
+    background: none !important;
+    background-image: none !important;
+}
 
 	}
