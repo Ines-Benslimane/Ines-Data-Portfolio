@@ -4891,4 +4891,13 @@ body.landing #page-wrapper:before {
         height: 160px;
     }
 }
+		#wrapper > .bg {
+    display: none !important;
+}
+
+#intro {
+    min-height: unset !important;
+    height: auto !important;
+    background: #eef4ff !important;
+}
 }
