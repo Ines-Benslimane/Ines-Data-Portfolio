@@ -4813,5 +4813,13 @@ input, select, textarea {
     }
 }
 
+.timeline-date {
+    font-weight: 700;
+    color: #444 !important;
+}
+
+.timeline-item::before {
+    border: 3px solid #444 !important;
+}
 
 	}
