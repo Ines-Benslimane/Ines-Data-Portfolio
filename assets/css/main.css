@@ -4701,5 +4701,48 @@ input, select, textarea {
 		 font-weight: 600;    /* moins massif */
    		 line-height: 1.2;
 		}
+/* Section Qui suis-je en deux colonnes */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+
+.about-photo img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+/* Responsive pour téléphone */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-photo img {
+        width: 200px;
+    }
+}
 
 	}
