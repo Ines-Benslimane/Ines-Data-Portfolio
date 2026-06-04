@@ -4715,13 +4715,6 @@ input, select, textarea {
     padding: 0 1rem;
 }
 
-.about-photo img {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
 .about-text {
     max-width: 600px;
 }
@@ -4743,9 +4736,21 @@ input, select, textarea {
         text-align: center;
     }
 
-    .about-photo img {
-        width: 200px;
-    }
+.about-photo {
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+.about-photo img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    display: block;
+}
 }
 		/* Timeline */
 .timeline {
