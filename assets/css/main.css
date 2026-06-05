@@ -4766,42 +4766,6 @@ input, select, textarea {
 }
 
 /* ============================
-   SECTION BIENVENUE (desktop)
-   ============================ */
-#welcome {
-    text-align: center;
-    padding: 2em 0;
-    margin-bottom: 3em; /* évite que la photo remonte dessus */
-}
-
-/* ============================
-   SECTION QUI SUIS-JE (desktop)
-   ============================ */
-#about-hero {
-    padding: 3em 0;
-}
-
-.about-overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.about-photo {
-    width: 280px;
-    border-radius: 10px;
-}
-
-.about-text {
-    max-width: 500px;
-}
-
-
-/* ============================
    VERSION MOBILE (Massively = 736px)
    ============================ */
 @media screen and (max-width: 736px) {
@@ -4810,6 +4774,7 @@ input, select, textarea {
     #welcome {
         padding: 1.5em 0;
         margin-bottom: 2em;
+        text-align: center;
     }
 
     #welcome h1 {
@@ -4822,11 +4787,13 @@ input, select, textarea {
         flex-direction: column;
         text-align: center;
         gap: 20px;
+        width: 100%;
     }
 
     .about-photo {
         width: 70%;
         margin: 0 auto;
+        display: block;
     }
 
     .about-text {
