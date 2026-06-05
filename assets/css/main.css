@@ -4707,4 +4707,12 @@ input, select, textarea {
     top: 0 !important;
     margin-top: 0 !important;
 }
+#intro {
+    min-height: 100vh; /* occupe toute la hauteur */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
