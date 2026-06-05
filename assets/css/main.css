@@ -4761,3 +4761,13 @@ input, select, textarea {
     line-height: 1.6;
 }
 
+.about-actions {
+    margin-top: 20px;
+}
+
+.about-actions .button {
+    display: inline-block;
+    padding: 0.8em 1.6em;
+    font-size: 0.9rem;
+}
+
