@@ -4765,3 +4765,31 @@ input, select, textarea {
     margin-top: 20px;
 }
 
+/* --- Responsive mobile pour la section Qui suis-je --- */
+@media screen and (max-width: 768px) {
+
+    .about-overlay {
+        flex-direction: column; /* photo au-dessus, texte en dessous */
+        text-align: center;     /* centrer le texte */
+    }
+
+    .about-photo {
+        width: 60%;             /* photo plus petite */
+        margin-bottom: 20px;    /* espace sous la photo */
+    }
+
+    .about-text {
+        margin-left: 0;         /* enlever la marge de droite */
+        max-width: 90%;         /* éviter que ça déborde */
+    }
+
+    .about-actions {
+        text-align: center;     /* centrer le bouton */
+        margin-top: 20px;
+    }
+
+    .about-actions .button {
+        width: auto;            /* bouton à taille normale */
+        display: inline-block;
+    }
+}
