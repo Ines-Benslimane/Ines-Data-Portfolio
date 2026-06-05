@@ -4807,3 +4807,51 @@ input, select, textarea {
         margin-top: 20px;
     }
 }
+
+/* ============================
+   FIX MOBILE FINAL
+   ============================ */
+
+#welcome {
+    text-align: center;
+    padding: 2em 0;
+    margin-bottom: 3em;
+}
+
+@media screen and (max-width: 736px) {
+
+    #welcome {
+        padding: 1.5em 0;
+        margin-bottom: 2em;
+    }
+
+    #welcome h1 {
+        font-size: 1.8em;
+        line-height: 1.2em;
+    }
+
+    .about-overlay {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .about-photo {
+        width: 70%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .about-text {
+        max-width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-actions {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
