@@ -4815,19 +4815,8 @@ input, select, textarea {
         margin-top: 20px;
     }
 }
-/* Fix du bloc Bienvenue sur mobile */
-@media screen and (max-width: 768px) {
-
-    #banner .inner {
-        text-align: center;
-        padding: 1.5em 0 !important;
-        margin: 0 auto !important;
-        width: 100% !important;
-    }
-
-    #banner h1 {
-        font-size: 1.8em !important;
-        line-height: 1.2em !important;
-    }
+#welcome {
+    text-align: center;
+    padding: 2em 0;
 }
 
