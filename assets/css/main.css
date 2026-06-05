@@ -4765,8 +4765,18 @@ input, select, textarea {
     margin-top: 20px;
 }
 
-/* --- SECTION QUI SUIS-JE (responsive + desktop) --- */
+/* ============================
+   SECTION BIENVENUE (desktop)
+   ============================ */
+#welcome {
+    text-align: center;
+    padding: 2em 0;
+    margin-bottom: 3em; /* évite que la photo remonte dessus */
+}
 
+/* ============================
+   SECTION QUI SUIS-JE (desktop)
+   ============================ */
 #about-hero {
     padding: 3em 0;
 }
@@ -4790,9 +4800,24 @@ input, select, textarea {
     max-width: 500px;
 }
 
-/* --- VERSION MOBILE --- */
-@media screen and (max-width: 768px) {
 
+/* ============================
+   VERSION MOBILE (Massively = 736px)
+   ============================ */
+@media screen and (max-width: 736px) {
+
+    /* Bienvenue */
+    #welcome {
+        padding: 1.5em 0;
+        margin-bottom: 2em;
+    }
+
+    #welcome h1 {
+        font-size: 1.8em;
+        line-height: 1.2em;
+    }
+
+    /* Qui suis-je */
     .about-overlay {
         flex-direction: column;
         text-align: center;
@@ -4815,22 +4840,3 @@ input, select, textarea {
         margin-top: 20px;
     }
 }
-#welcome {
-    text-align: center;
-    padding: 2em 0;
-}
-/* Version mobile du bloc Bienvenue */
-@media screen and (max-width: 768px) {
-
-    #welcome h1 {
-        font-size: 1.8em;
-        line-height: 1.2em;
-        margin-bottom: 0.5em;
-    }
-
-    #welcome {
-        padding: 1.5em 0;
-        text-align: center;
-    }
-}
-
