@@ -4702,3 +4702,9 @@ input, select, textarea {
     display: block;
     margin-top: 10px;
 }
+#intro {
+    position: relative !important;
+    top: 0 !important;
+    margin-top: 0 !important;
+}
+
