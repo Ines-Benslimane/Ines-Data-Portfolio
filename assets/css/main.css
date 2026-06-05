@@ -4761,3 +4761,17 @@ input, select, textarea {
     line-height: 1.6;
 }
 
+.about-text {
+    position: relative;
+    z-index: 10; /* passe devant l'image */
+    color: white; /* ou noir si ton image est sombre */
+    max-width: 500px;
+    margin-left: 40px;
+}
+.about-overlay {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
