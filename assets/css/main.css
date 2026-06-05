@@ -4719,7 +4719,7 @@ input, select, textarea {
 /* Nouvelle section avec image horizontale */
 #about-hero {
     position: relative;
-    background-image: url("../../NOM_DE_TA_NOUVELLE_IMAGE.jpg");
+    background-image: url("../../images/pic01.jpg");
     background-size: cover;
     background-position: center;
     height: 450px; /* ajuste si tu veux */
