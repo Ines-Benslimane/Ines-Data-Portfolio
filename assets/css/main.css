@@ -4819,4 +4819,18 @@ input, select, textarea {
     text-align: center;
     padding: 2em 0;
 }
+/* Version mobile du bloc Bienvenue */
+@media screen and (max-width: 768px) {
+
+    #welcome h1 {
+        font-size: 1.8em;
+        line-height: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    #welcome {
+        padding: 1.5em 0;
+        text-align: center;
+    }
+}
 
