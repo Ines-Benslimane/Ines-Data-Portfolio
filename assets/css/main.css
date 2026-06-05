@@ -4770,7 +4770,6 @@ input, select, textarea {
    ============================ */
 @media screen and (max-width: 736px) {
 
-    /* Bienvenue */
     #welcome {
         padding: 1.5em 0;
         margin-bottom: 2em;
@@ -4782,29 +4781,37 @@ input, select, textarea {
         line-height: 1.2em;
     }
 
-    /* Qui suis-je */
+    #about-hero {
+        height: auto;
+        padding: 2rem 1rem;
+        background-position: center top;
+    }
+
     .about-overlay {
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        gap: 20px;
-        width: 100%;
+        gap: 1.5rem;
+        width: 92%;
     }
 
     .about-photo {
-        width: 70%;
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
         margin: 0 auto;
-        display: block;
     }
 
     .about-text {
-        max-width: 90%;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0;
         text-align: center;
     }
 
     .about-actions {
         text-align: center;
-        margin-top: 20px;
+        margin-top: 1rem;
     }
 }
 
