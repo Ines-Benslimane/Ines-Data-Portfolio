@@ -4716,3 +4716,48 @@ input, select, textarea {
     text-align: center;
 }
 
+/* Nouvelle section avec image horizontale */
+#about-hero {
+    position: relative;
+    background-image: url("../../NOM_DE_TA_NOUVELLE_IMAGE.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 450px; /* ajuste si tu veux */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenu posé sur l'image */
+.about-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1100px;
+}
+
+/* Photo à gauche */
+.about-photo {
+    width: 230px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Texte à droite */
+.about-text {
+    color: white;
+    max-width: 550px;
+    margin-left: 40px;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
