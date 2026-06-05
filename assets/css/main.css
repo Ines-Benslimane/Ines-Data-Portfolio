@@ -4815,6 +4815,12 @@ input, select, textarea {
     }
 }
 
+.about-text h2,
+.about-text p,
+.about-text em {
+    color: #ffffff;
+}
+
 /* ============================
    FIX MOBILE FINAL
    ============================ */
