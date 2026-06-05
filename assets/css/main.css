@@ -4796,17 +4796,17 @@ input, select, textarea {
         gap: 1.5rem;
         width: 92%;
     }
-
+	
 	.about-photo {
-   	 	width: 200px;
-    	height: 200px;
+		width: 200px;
+		height: 200px;
 		object-fit: cover;
+		object-position: center 10%;
 		border-radius: 50%;
 		margin: 0 auto;
 		border: 4px solid white;
 		box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 	}
-
     .about-text {
         max-width: 100%;
         margin: 0;
