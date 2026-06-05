@@ -4765,31 +4765,53 @@ input, select, textarea {
     margin-top: 20px;
 }
 
+/* --- SECTION QUI SUIS-JE (responsive + desktop) --- */
+
+#about-hero {
+    padding: 3em 0;
+}
+
+.about-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-photo {
+    width: 280px;
+    border-radius: 10px;
+}
+
+.about-text {
+    max-width: 500px;
+}
+
+/* --- VERSION MOBILE --- */
 @media screen and (max-width: 768px) {
 
     .about-overlay {
-        display: flex;
         flex-direction: column;
-        align-items: center;
         text-align: center;
-        width: 100%;
+        gap: 20px;
     }
 
     .about-photo {
         width: 70%;
-        margin-bottom: 20px;
+        margin: 0 auto;
     }
 
     .about-text {
-        width: 90%;
+        max-width: 90%;
         margin: 0 auto;
         text-align: center;
     }
 
     .about-actions {
-        margin-top: 20px;
         text-align: center;
+        margin-top: 20px;
     }
 }
-
-
