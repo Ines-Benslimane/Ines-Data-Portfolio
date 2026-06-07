@@ -4888,3 +4888,60 @@ input, select, textarea {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- PALETTE MARRON ÉPURÉE --- */
+
+body {
+    background-color: #f7f3ef; /* beige doux */
+    color: #3a2f28; /* texte brun foncé */
+}
+
+/* Titres */
+h1, h2, h3 {
+    color: #5a4634; /* marron élégant */
+}
+
+/* Liens */
+a {
+    color: #5a4634;
+}
+a:hover {
+    color: #3a2f28;
+}
+
+/* Cartes */
+.card {
+    background: #ffffff;
+    border: 1px solid #e5dcd3; /* beige/marron très léger */
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08); /* ombre marron */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 26px rgba(90, 70, 52, 0.15);
+}
+
+/* Dates */
+.card-date {
+    color: #7a6654; /* marron clair */
+}
+
+/* Intro */
+.intro {
+    color: #4a3c33;
+}
+
+/* --- ITALIQUE POUR LES ÉTABLISSEMENTS --- */
+
+.card p br + * {
+    font-style: italic;
+}
+
+/* Alternative plus robuste */
+.card p em,
+.card p i {
+    font-style: italic;
+}
+
