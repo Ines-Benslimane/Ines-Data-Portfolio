@@ -4828,51 +4828,40 @@ input, select, textarea {
 /* --- CARDS LAYOUT --- */
 
 .cards-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
 }
 
-@media (min-width: 750px) {
-    .cards-container {
-        grid-template-columns: 1fr 1fr;
-    }
+.cards-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+    background: #b8a89a;
+    border-radius: 10px;
 }
 
 .card {
+    min-width: 280px;
+    max-width: 320px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
     background: #ffffff;
+    border: 1px solid #d8cfc7;
     border-radius: 14px;
     padding: 1.8rem;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.10);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid #eaeaea;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+    box-shadow: 0 12px 26px rgba(90, 70, 52, 0.18);
 }
 
-.card-date {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #666;
-    display: block;
-    margin-bottom: 0.4rem;
-}
-
-.card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.6rem;
-    font-weight: 600;
-}
-
-.card p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #444;
-}
 
 /* Animation douce */
 .card {
