@@ -5038,5 +5038,11 @@ a:hover {
     letter-spacing: 0.4px;
     display: block;
 }
+/* Réduction du bouton Retour au portfolio */
+#header .logo {
+    font-size: 1.1em !important;   /* plus petit */
+    padding: 0.4em 0.8em !important; /* moins de hauteur */
+    letter-spacing: 0.5px;
+}
 
 
