@@ -5007,42 +5007,36 @@ a:hover {
     color: #4a3b32;
     box-shadow: 0 6px 16px rgba(90, 70, 52, 0.10);
 }
-/* Bloc chiffres clés */
+/* Correction du bloc chiffres clés */
 #project-femicide-europe .key-stats {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour éviter l'écrasement */
     gap: 1.5em;
-    margin: 2em 0;
-    padding: 1.5em;
+    margin: 2.5em 0;
+    padding: 2em;
     background: #f4ede7;
     border-radius: 12px;
     border: 1px solid #d8cfc7;
 }
 
-#project-femicide-europe .stat {
-    flex: 1;
-    text-align: center;
+@media (min-width: 900px) {
+    #project-femicide-europe .key-stats {
+        grid-template-columns: repeat(4, 1fr); /* 4 colonnes seulement sur grand écran */
+    }
 }
 
 #project-femicide-europe .stat .number {
+    font-size: 2.2em;
+}
+#header .accroche-top {
+    margin-top: 0.5em;
+    font-style: italic;
+    font-size: 1.35em; /* plus grand */
+    color: #f4ede7;
+    text-align: center;
+    opacity: 1;
+    letter-spacing: 0.4px;
     display: block;
-    font-size: 2em;
-    font-weight: 700;
-    color: #5a4634;
 }
 
-#project-femicide-europe .stat .label {
-    font-size: 0.95em;
-    color: #3b2f2f;
-}
-/* Phrase d'accroche en haut de la page */
-#header .accroche-top {
-    margin-top: 0.8em;
-    font-style: italic;
-    font-size: 1.1em;
-    color: #f4ede7; /* beige clair */
-    text-align: center;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
-}
 
