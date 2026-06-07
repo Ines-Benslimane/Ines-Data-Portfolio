@@ -5035,4 +5035,14 @@ a:hover {
     font-size: 0.95em;
     color: #3b2f2f;
 }
+/* Phrase d'accroche en haut de la page */
+#header .accroche-top {
+    margin-top: 0.8em;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #f4ede7; /* beige clair */
+    text-align: center;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
 
