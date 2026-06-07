@@ -4692,73 +4692,36 @@ input, select, textarea {
    THEME MARRON ÉPURÉ — INES
    ================================ */
 
-:root {
-    --bg: #f4eee9;          /* beige doux */
-    --bg-light: #faf7f4;    /* beige très clair */
-    --text: #3b2f2f;        /* brun foncé */
-    --title: #5a4634;       /* marron élégant */
-    --accent: #7a6654;      /* marron moyen */
-    --border: #d8cfc7;      /* beige-gris */
-}
-
-/* Fond général */
-body {
-    background-color: var(--bg);
-    color: var(--text);
-}
-
-/* Section projet */
 #project-femicide-europe {
-    background: var(--bg-light);
+    background: #faf7f4;
     padding: 3em 2em;
     border-radius: 14px;
-    border: 1px solid var(--border);
+    border: 1px solid #d8cfc7;
     max-width: 900px;
     margin: 0 auto;
     box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
 }
 
-/* Titres */
 #project-femicide-europe h2,
 #project-femicide-europe h3,
 #project-femicide-europe h4 {
-    color: var(--title);
+    color: #5a4634;
     font-weight: 600;
-    margin-bottom: 0.6em;
 }
 
-/* Paragraphes */
 #project-femicide-europe p {
+    color: #3b2f2f;
     line-height: 1.7;
-    margin-bottom: 1.2em;
 }
 
-/* Listes */
-#project-femicide-europe ul li {
-    margin-bottom: 0.6em;
-}
-
-/* Images */
 #project-femicide-europe img {
-    width: 70%;
+    width: 65%;
     margin: 1.5em auto;
     display: block;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(90, 70, 52, 0.12);
 }
 
-/* Figures */
-#project-femicide-europe figure {
-    text-align: center;
-    margin: 2em 0;
-}
-#project-femicide-europe figcaption {
-    font-size: 0.9em;
-    color: var(--accent);
-    margin-top: 0.5em;
-}
-
-/* Tableaux */
 #project-femicide-europe table {
     width: 100%;
     border-collapse: collapse;
@@ -4770,7 +4733,7 @@ body {
 }
 
 #project-femicide-europe th {
-    background: var(--title);
+    background: #5a4634;
     color: white;
     padding: 0.9em;
     text-align: left;
@@ -4778,21 +4741,9 @@ body {
 
 #project-femicide-europe td {
     padding: 0.9em;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid #d8cfc7;
 }
 
 #project-femicide-europe tr:last-child td {
     border-bottom: none;
-}
-
-/* Boutons */
-.button {
-    background-color: var(--title) !important;
-    color: white !important;
-    border-radius: 6px;
-    padding: 0.75em 1.5em;
-    transition: 0.2s ease;
-}
-.button:hover {
-    background-color: var(--text) !important;
 }
