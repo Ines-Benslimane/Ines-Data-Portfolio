@@ -5044,5 +5044,17 @@ a:hover {
     padding: 0.4em 0.8em !important; /* moins de hauteur */
     letter-spacing: 0.5px;
 }
+/* Réduction du padding du header pour aligner bouton + phrase */
+#header {
+    padding-top: 1.5em !important;
+    padding-bottom: 1.2em !important;
+}
+
+/* Ajustement de la phrase d'accroche */
+#header .accroche-top {
+    margin-top: 0.3em;
+    font-size: 1.45em;
+    display: block;
+}
 
 
