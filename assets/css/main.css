@@ -5007,4 +5007,32 @@ a:hover {
     color: #4a3b32;
     box-shadow: 0 6px 16px rgba(90, 70, 52, 0.10);
 }
+/* Bloc chiffres clés */
+#project-femicide-europe .key-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
+    margin: 2em 0;
+    padding: 1.5em;
+    background: #f4ede7;
+    border-radius: 12px;
+    border: 1px solid #d8cfc7;
+}
+
+#project-femicide-europe .stat {
+    flex: 1;
+    text-align: center;
+}
+
+#project-femicide-europe .stat .number {
+    display: block;
+    font-size: 2em;
+    font-weight: 700;
+    color: #5a4634;
+}
+
+#project-femicide-europe .stat .label {
+    font-size: 0.95em;
+    color: #3b2f2f;
+}
 
