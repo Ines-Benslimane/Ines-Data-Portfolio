@@ -4935,7 +4935,7 @@ a:hover {
 }
 
 /* ================================
-   THEME MARRON ÉPURÉ — INES
+   STYLE EPURE POUR LA SECTION FEMINICIDES
    ================================ */
 
 #project-femicide-europe {
@@ -4944,7 +4944,7 @@ a:hover {
     border-radius: 14px;
     border: 1px solid #d8cfc7;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 3em auto;
     box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
 }
 
@@ -4958,6 +4958,10 @@ a:hover {
 #project-femicide-europe p {
     color: #3b2f2f;
     line-height: 1.7;
+}
+
+#project-femicide-europe ul li {
+    margin-bottom: 0.6em;
 }
 
 #project-femicide-europe img {
@@ -4993,3 +4997,4 @@ a:hover {
 #project-femicide-europe tr:last-child td {
     border-bottom: none;
 }
+
