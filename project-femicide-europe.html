@@ -1,163 +1,60 @@
-<section id="project-femicide-europe">
-<body class="is-preload project-femicide">
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Analyse des féminicides en Europe</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
 
-  <h2>Analyse économique des féminicides en Europe</h2>
+    <!-- ICI : le body avec la classe spéciale -->
+    <body class="is-preload project-femicide">
 
-  <p>
-    En Europe, chaque jour, une femme est tuée par son conjoint ou ex‑conjoint.
-    Les féminicides constituent un enjeu majeur de santé publique, de justice sociale
-    et de politique économique. Ce projet analyse comment la richesse économique des pays,
-    les investissements publics et associatifs, ainsi que la prévalence des violences déclarées
-    influencent les différences de taux de féminicides en Europe.
-  </p>
+        <!-- Wrapper global du thème Massively -->
+        <div id="wrapper">
 
-  <h3>Objectif du projet</h3>
-  <p>
-    L’objectif est d’évaluer dans quelle mesure :
-  </p>
-  <ul>
-    <li>la richesse nationale (<code>gdp</code>) constitue un facteur protecteur ;</li>
-    <li>les investissements dédiés à la lutte contre les violences (<code>anti_violence_spend</code>) ont un effet mesurable ;</li>
-    <li>la prévalence des violences déclarées (<code>violence_prevalence</code>) est liée au taux de féminicides (<code>femicide_ratio</code>).</li>
-  </ul>
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Retour au portfolio</a>
+            </header>
 
-  <h3>Données et préparation</h3>
-  <p>
-    Les données proviennent de sources officielles (Eurostat, EIGE, instituts nationaux, ONG)
-    et couvrent plusieurs pays européens, principalement pour l’année 2021.
-    Les bases ont été fusionnées par pays, les valeurs manquantes imputées (méthode <em>mice</em>)
-    et les colonnes techniques supprimées afin d’obtenir une base finale propre
-    d’environ 148 observations.
-  </p>
+            <!-- Contenu principal -->
+            <div id="main">
 
-  <h4>Table de correspondance des variables</h4>
+                <!-- TA SECTION PROJET -->
+                <section id="project-femicide-europe">
 
-  <table>
-    <thead>
-      <tr>
-        <th>Nouveau nom</th>
-        <th>Signification</th>
-      </tr>
-    </thead>
+                    <h2>Analyse économique des féminicides en Europe</h2>
 
-    <tbody>
-      <tr>
-        <td><code>gdp</code></td>
-        <td>Produit Intérieur Brut du pays (milliards d’euros)</td>
-      </tr>
+                    <p>
+                        En Europe, chaque jour, une femme est tuée par son conjoint ou ex‑conjoint.
+                        Les féminicides constituent un enjeu majeur de santé publique, de justice sociale
+                        et de politique économique. Ce projet analyse comment la richesse économique des pays,
+                        les investissements publics et associatifs, ainsi que la prévalence des violences déclarées
+                        influencent les différences de taux de féminicides en Europe.
+                    </p>
 
-      <tr>
-        <td><code>anti_violence_spend</code></td>
-        <td>Investissements publics et associatifs contre les violences faites aux femmes (millions d’euros)</td>
-      </tr>
+                    <h3>Objectif du projet</h3>
+                    <p>L’objectif est d’évaluer dans quelle mesure :</p>
+                    <ul>
+                        <li>la richesse nationale (<code>gdp</code>) constitue un facteur protecteur ;</li>
+                        <li>les investissements dédiés à la lutte contre les violences (<code>anti_violence_spend</code>) ont un effet mesurable ;</li>
+                        <li>la prévalence des violences déclarées (<code>violence_prevalence</code>) est liée au taux de féminicides (<code>femicide_ratio</code>).</li>
+                    </ul>
 
-      <tr>
-        <td><code>violence_prevalence</code></td>
-        <td>Pourcentage de femmes déclarant avoir subi des violences</td>
-      </tr>
+                    <h3>Données et préparation</h3>
+                    <p>
+                        Les données proviennent de sources officielles (Eurostat, EIGE, instituts nationaux, ONG)
+                        et couvrent plusieurs pays européens, principalement pour l’année 2021.
+                        Les bases ont été fusionnées par pays, les valeurs manquantes imputées (méthode <em>mice</em>)
+                        et les colonnes techniques supprimées afin d’obtenir une base finale propre
+                        d’environ 148 observations.
+                    </p>
 
-      <tr>
-        <td><code>femicide_rate</code></td>
-        <td>Nombre de féminicides par million d’habitants</td>
-      </tr>
+                    <h4>Table de correspondance des variables</h4>
 
-      <tr>
-        <td><code>femicide_ratio</code></td>
-        <td>Ratio standardisé des féminicides</td>
-      </tr>
-
-      <tr>
-        <td><code>violence_type</code></td>
-        <td>Type de violence (physique, sexuelle, menaces)</td>
-      </tr>
-
-      <tr>
-        <td><code>income_group</code></td>
-        <td>Groupe de pays selon le niveau de PIB (Rich vs Poor)</td>
-      </tr>
-
-      <tr>
-        <td><code>sex</code></td>
-        <td>Population étudiée (ici : femmes)</td>
-      </tr>
-
-      <tr>
-        <td><code>country</code></td>
-        <td>Pays observé</td>
-      </tr>
-
-      <tr>
-        <td><code>year</code></td>
-        <td>Année d’observation</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Méthodologie statistique</h3>
-  <p>
-    Plusieurs modèles de régression linéaire ont été estimés pour analyser les déterminants
-    du taux de féminicides :
-  </p>
-
-  <ul>
-    <li>
-      <strong>Modèle 1 – Effet de la richesse :</strong>
-      <code>femicide_ratio ~ log(gdp)</code><br>
-      Le PIB est négativement et significativement associé au ratio de féminicides :
-      les pays plus riches présentent en moyenne moins de féminicides.
-    </li>
-
-    <li>
-      <strong>Modèle 2 – Rôle des violences déclarées :</strong>
-      <code>femicide_ratio ~ log(gdp) + violence_prevalence</code><br>
-      La prévalence des violences déclarées améliore la qualité du modèle.
-      Dans les pays où les violences sont davantage déclarées, les institutions semblent plus mobilisées.
-    </li>
-
-    <li>
-      <strong>Modèle 3 – Interaction avec le niveau de richesse :</strong>
-      <code>femicide_ratio ~ log(gdp) * income_group</code><br>
-      Le PIB reste significatif, mais la distinction Rich vs Poor et l’interaction
-      ne sont pas clairement significatives.
-    </li>
-
-    <li>
-      <strong>Modèles sur les investissements :</strong>
-      <code>femicide_ratio ~ log(gdp) + anti_violence_spend</code><br>
-      Les investissements sont positivement associés au taux de féminicides,
-      ce qui suggère un effet de causalité inversée : les pays les plus touchés investissent davantage.
-    </li>
-  </ul>
-
-  <h3>Visualisations</h3>
-  <p>
-    Deux visualisations principales illustrent ces résultats :
-  </p>
-
-  <figure>
-    <img src="graph1.png" alt="Relation PIB et féminicides">
-    <figcaption>Relation entre le PIB et le ratio de féminicides.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="graph2.png" alt="Violences déclarées et féminicides par groupe">
-    <figcaption>Effet des violences déclarées selon le niveau de richesse.</figcaption>
-  </figure>
-
-  <h3>Principaux enseignements</h3>
-  <ul>
-    <li>La richesse économique (<code>gdp</code>) est un facteur protecteur important.</li>
-    <li>La visibilité des violences (<code>violence_prevalence</code>) joue un rôle clé dans la prévention.</li>
-    <li>Les investissements (<code>anti_violence_spend</code>) reflètent souvent la gravité du problème plutôt qu’un effet protecteur direct.</li>
-    <li>Les différences entre pays renvoient à des facteurs institutionnels, culturels et juridiques.</li>
-  </ul>
-
-  <h3>Compétences mobilisées</h3>
-  <ul>
-    <li>Nettoyage, fusion et imputation de données (R, <code>dplyr</code>, <code>mice</code>).</li>
-    <li>Modélisation statistique (régressions linéaires, interactions).</li>
-    <li>Visualisation de données (ggplot2).</li>
-    <li>Analyse appliquée à l’économie de la santé.</li>
-  </ul>
-
-</section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nouveau nom</th>
+                                <th>Signification
