@@ -4997,4 +4997,14 @@ a:hover {
 #project-femicide-europe tr:last-child td {
     border-bottom: none;
 }
+#project-femicide-europe p:first-of-type {
+    font-size: 1.2em;
+    font-style: italic;
+    background: #f7f2ee;
+    padding: 1.5em;
+    border-radius: 10px;
+    border: 1px solid #e0d6cf;
+    color: #4a3b32;
+    box-shadow: 0 6px 16px rgba(90, 70, 52, 0.10);
+}
 
