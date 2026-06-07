@@ -29,6 +29,69 @@
     d’environ 148 observations.
   </p>
 
+  <h4>Table de correspondance des variables</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nouveau nom</th>
+        <th>Signification</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><code>gdp</code></td>
+        <td>Produit Intérieur Brut du pays (milliards d’euros)</td>
+      </tr>
+
+      <tr>
+        <td><code>anti_violence_spend</code></td>
+        <td>Investissements publics et associatifs contre les violences faites aux femmes (millions d’euros)</td>
+      </tr>
+
+      <tr>
+        <td><code>violence_prevalence</code></td>
+        <td>Pourcentage de femmes déclarant avoir subi des violences</td>
+      </tr>
+
+      <tr>
+        <td><code>femicide_rate</code></td>
+        <td>Nombre de féminicides par million d’habitants</td>
+      </tr>
+
+      <tr>
+        <td><code>femicide_ratio</code></td>
+        <td>Ratio standardisé des féminicides</td>
+      </tr>
+
+      <tr>
+        <td><code>violence_type</code></td>
+        <td>Type de violence (physique, sexuelle, menaces)</td>
+      </tr>
+
+      <tr>
+        <td><code>income_group</code></td>
+        <td>Groupe de pays selon le niveau de PIB (Rich vs Poor)</td>
+      </tr>
+
+      <tr>
+        <td><code>sex</code></td>
+        <td>Population étudiée (ici : femmes)</td>
+      </tr>
+
+      <tr>
+        <td><code>country</code></td>
+        <td>Pays observé</td>
+      </tr>
+
+      <tr>
+        <td><code>year</code></td>
+        <td>Année d’observation</td>
+      </tr>
+    </tbody>
+  </table>
+
   <h3>Méthodologie statistique</h3>
   <p>
     Plusieurs modèles de régression linéaire ont été estimés pour analyser les déterminants
@@ -46,9 +109,8 @@
     <li>
       <strong>Modèle 2 – Rôle des violences déclarées :</strong>
       <code>femicide_ratio ~ log(gdp) + violence_prevalence</code><br>
-      La prévalence des violences déclarées apporte une information supplémentaire
-      et améliore la qualité du modèle. Dans les pays où les violences sont davantage déclarées,
-      les institutions semblent plus mobilisées.
+      La prévalence des violences déclarées améliore la qualité du modèle.
+      Dans les pays où les violences sont davantage déclarées, les institutions semblent plus mobilisées.
     </li>
 
     <li>
@@ -70,18 +132,16 @@
   <p>
     Deux visualisations principales illustrent ces résultats :
   </p>
-  <ul>
-    <li>Nuage de points PIB vs taux de féminicides avec droite de régression.</li>
-    <li>Relation entre violences déclarées et féminicides, séparée par groupe de pays (Rich vs Poor).</li>
-  </ul>
 
-  <!-- Tu inséreras tes images ici -->
-  <!-- Exemple :
   <figure>
     <img src="graph1.png" alt="Relation PIB et féminicides">
     <figcaption>Relation entre le PIB et le ratio de féminicides.</figcaption>
   </figure>
-  -->
+
+  <figure>
+    <img src="graph2.png" alt="Violences déclarées et féminicides par groupe">
+    <figcaption>Effet des violences déclarées selon le niveau de richesse.</figcaption>
+  </figure>
 
   <h3>Principaux enseignements</h3>
   <ul>
