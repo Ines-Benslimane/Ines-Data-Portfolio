@@ -5057,3 +5057,81 @@ a:hover {
     font-size: 1.45em;
     display: block;
 }
+/* ============================
+   STYLE PAGE PSYCHOTROPES
+   ============================ */
+
+/* Conteneur principal */
+#project-psychotropes-france {
+    background: #faf7f4 !important;
+    padding: 3em 2em !important;
+    border-radius: 14px !important;
+    border: 1px solid #d8cfc7 !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08) !important;
+}
+
+/* Titres */
+#project-psychotropes-france h2,
+#project-psychotropes-france h3 {
+    color: #5a4634 !important;
+    font-weight: 600 !important;
+}
+
+/* Paragraphes */
+#project-psychotropes-france p {
+    color: #3b2f2f !important;
+    line-height: 1.7 !important;
+}
+
+/* Phrase d'accroche */
+#project-psychotropes-france .intro-quote {
+    font-style: italic;
+    font-size: 1.25em;
+    text-align: center;
+    color: #5a4634;
+    margin: 1.5em 0 2em 0;
+    opacity: 0.9;
+}
+
+/* ============================
+   BLOC CHIFFRES CLÉS
+   ============================ */
+
+#project-psychotropes-france .key-stats-psy {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    margin: 2.5em 0;
+    padding: 2em;
+    background: #f4ede7;
+    border-radius: 12px;
+    border: 1px solid #d8cfc7;
+    box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
+}
+
+#project-psychotropes-france .key-stats-psy .stat {
+    text-align: center;
+}
+
+#project-psychotropes-france .key-stats-psy .number {
+    display: block;
+    font-size: 2em;
+    font-weight: 700;
+    color: #5a4634;
+    margin-bottom: 0.2em;
+}
+
+#project-psychotropes-france .key-stats-psy .label {
+    font-size: 0.95em;
+    color: #3b2f2f;
+    letter-spacing: 0.3px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    #project-psychotropes-france .key-stats-psy {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
