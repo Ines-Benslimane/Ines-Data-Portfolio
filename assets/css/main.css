@@ -5008,36 +5008,37 @@ a:hover {
     box-shadow: 0 6px 16px rgba(90, 70, 52, 0.10);
 }
 /* Correction du bloc chiffres clés */
+/* Bloc chiffres clés — version premium */
 #project-femicide-europe .key-stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour éviter l'écrasement */
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5em;
     margin: 2.5em 0;
-    padding: 2em;
-    background: #f4ede7;
-    border-radius: 12px;
+    padding: 2.2em 2em;
+    background: #f7f2ee;
+    border-radius: 14px;
     border: 1px solid #d8cfc7;
+    box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
 }
 
-@media (min-width: 900px) {
-    #project-femicide-europe .key-stats {
-        grid-template-columns: repeat(4, 1fr); /* 4 colonnes seulement sur grand écran */
-    }
+#project-femicide-europe .stat {
+    text-align: center;
 }
 
 #project-femicide-europe .stat .number {
-    font-size: 2.2em;
-}
-#header .accroche-top {
-    margin-top: 0.5em;
-    font-style: italic;
-    font-size: 1.35em; /* plus grand */
-    color: #f4ede7;
-    text-align: center;
-    opacity: 1;
-    letter-spacing: 0.4px;
     display: block;
+    font-size: 2.4em;
+    font-weight: 700;
+    color: #5a4634;
+    margin-bottom: 0.2em;
 }
+
+#project-femicide-europe .stat .label {
+    font-size: 1em;
+    color: #6b5644;
+    letter-spacing: 0.3px;
+}
+
 /* Réduction du bouton Retour au portfolio */
 #header .logo {
     font-size: 1.1em !important;   /* plus petit */
@@ -5056,5 +5057,3 @@ a:hover {
     font-size: 1.45em;
     display: block;
 }
-
-
