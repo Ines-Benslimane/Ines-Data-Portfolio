@@ -5583,6 +5583,21 @@ verflow-x: auto;
 #nav .dropdown:hover .dropdown-content {
     display: block !important;
 }
+/* Permet au dropdown de s'afficher correctement sur desktop */
+#nav .links > li.dropdown {
+    position: relative !important;
+    display: block !important; /* LA LIGNE QUI RÈGLE TOUT */
+}
+
+/* Le conteneur ne coupe plus le dropdown */
+#nav .links {
+    overflow: visible !important;
+}
+
+/* Le dropdown apparaît au survol */
+#nav .dropdown:hover .dropdown-content {
+    display: block !important;
+}
 
 
 
