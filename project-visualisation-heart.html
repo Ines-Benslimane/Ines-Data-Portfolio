@@ -1,109 +1,137 @@
-<section id="project-visualisation-heart">
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Analyse des facteurs de risque cardiovasculaire</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
 
-    <h2>Analyse des facteurs de risque associés aux maladies cardiovasculaires</h2>
+    <body class="is-preload">
 
-    <!-- Phrase d'accroche -->
-    <p class="intro-quote">
-        « Sur plus de 300&nbsp;000 individus, certains comportements de vie multiplient par trois le risque de maladie cardiaque. »
-    </p>
+        <div id="wrapper">
 
-    <!-- Bloc chiffres clés -->
-    <div class="key-stats-heart">
-        <div class="stat">
-            <span class="number">319 795</span>
-            <span class="label">individus dans le dataset</span>
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Retour au portfolio</a>
+            </header>
+
+            <!-- Main -->
+            <div id="main">
+                <article class="post">
+
+                    <header class="major">
+                        <h1>Analyse des facteurs de risque associés<br>aux maladies cardiovasculaires</h1>
+                    </header>
+
+                    <section id="project-visualisation-heart">
+
+                        <!-- Phrase d'accroche -->
+                        <p class="intro-quote">
+                            « Sur plus de 300&nbsp;000 individus, certains comportements de vie multiplient par trois le risque de maladie cardiaque. »
+                        </p>
+
+                        <!-- Bloc chiffres clés -->
+                        <div class="key-stats-heart">
+                            <div class="stat">
+                                <span class="number">319 795</span>
+                                <span class="label">individus dans le dataset</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">~10 %</span>
+                                <span class="label">présentent une maladie cardiaque</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">3×</span>
+                                <span class="label">risque plus élevé dans le cluster à risque</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">4</span>
+                                <span class="label">comportements dans le score de risque</span>
+                            </div>
+                        </div>
+
+                        <h3>Contexte</h3>
+                        <p>
+                            Les maladies cardiovasculaires comptent parmi les premières causes de mortalité dans le monde. Au‑delà des facteurs
+                            biologiques, les habitudes de vie jouent un rôle central : tabagisme, activité physique, sommeil, santé mentale.
+                            L’essor des bases de données massives permet aujourd’hui d’étudier ces liens à grande échelle.
+                        </p>
+                        <p>
+                            Ce projet s’appuie sur un dataset de <strong>319&nbsp;795 individus</strong>, issu de l’enquête américaine BRFSS
+                            (CDC). L’objectif est d’identifier les comportements les plus associés à la présence d’une maladie cardiaque
+                            (variable <code>HeartDisease</code>).
+                        </p>
+
+                        <h3>Méthodologie</h3>
+                        <p>
+                            L’indicateur principal (KPI) est la variable binaire <strong>HeartDisease</strong> (Yes/No). Les variables étudiées
+                            incluent des habitudes de vie (tabagisme, consommation d’alcool, activité physique, durée de sommeil, santé mentale),
+                            ainsi que des variables de contrôle (BMI, âge, sexe, diabète, santé physique, difficulté à marcher).
+                        </p>
+                        <p>
+                            L’analyse combine statistiques descriptives, visualisations (histogrammes, bar charts, heatmaps de corrélation,
+                            boxplots), clustering (K‑means) et analyse en composantes principales (PCA), réalisées sous R.
+                        </p>
+
+                        <h3>Résultats principaux</h3>
+                        <ul>
+                            <li>
+                                <strong>Prévalence :</strong><br>
+                                Environ <strong>10&nbsp;%</strong> des individus déclarent une maladie cardiaque.
+                            </li>
+                            <li>
+                                <strong>Habitudes de vie :</strong><br>
+                                Les fumeurs et les personnes ne pratiquant pas d’activité physique présentent une proportion plus élevée de
+                                maladies cardiaques.
+                            </li>
+                            <li>
+                                <strong>Santé mentale et physique :</strong><br>
+                                Une corrélation notable est observée entre mauvaise santé mentale et mauvaise santé physique, ainsi qu’entre BMI
+                                élevé et dégradation de la santé physique.
+                            </li>
+                            <li>
+                                <strong>Clustering :</strong><br>
+                                Trois profils sont identifiés. Le cluster caractérisé par un BMI élevé et une mauvaise santé physique présente une
+                                prévalence d’environ <strong>22,5&nbsp;%</strong>, contre ~7&nbsp;% dans les autres clusters.
+                            </li>
+                            <li>
+                                <strong>Score de risque :</strong><br>
+                                Le <strong>LifestyleRiskScore</strong> (0 à 4) montre une augmentation nette du risque avec le cumul de comportements défavorables.
+                            </li>
+                            <li>
+                                <strong>PCA :</strong><br>
+                                Les deux premières composantes expliquent <strong>58,6&nbsp;%</strong> de la variance totale.
+                            </li>
+                        </ul>
+
+                        <h3>Discussion</h3>
+                        <p>
+                            L’analyse confirme l’impact majeur des habitudes de vie sur le risque cardiovasculaire. L’absence d’activité physique,
+                            le tabagisme, un BMI élevé et un mauvais état de santé global sont fortement associés à la présence de maladie
+                            cardiaque.
+                        </p>
+                        <p>
+                            Ces résultats sont cohérents avec la littérature médicale et illustrent l’intérêt des données massives pour mieux
+                            comprendre les profils de risque et orienter les actions de prévention.
+                        </p>
+
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li><strong>Manipulation de données massives</strong> (300k+ observations) sous R.</li>
+                            <li><strong>Statistiques descriptives</strong> et visualisations avancées (ggplot2, heatmaps, boxplots).</li>
+                            <li><strong>Clustering (K‑means)</strong> et <strong>analyse en composantes principales (PCA)</strong>.</li>
+                            <li><strong>Construction d’indicateurs synthétiques</strong> (LifestyleRiskScore, catégories de mode de vie).</li>
+                            <li><strong>Interprétation et vulgarisation</strong> de résultats appliqués à la santé publique.</li>
+                        </ul>
+
+                    </section>
+
+                </article>
+            </div>
+
         </div>
-        <div class="stat">
-            <span class="number">~10 %</span>
-            <span class="label">présentent une maladie cardiaque</span>
-        </div>
-        <div class="stat">
-            <span class="number">3×</span>
-            <span class="label">risque plus élevé dans le cluster à risque</span>
-        </div>
-        <div class="stat">
-            <span class="number">4</span>
-            <span class="label">comportements dans le score de risque</span>
-        </div>
-    </div>
 
-    <h3>Contexte</h3>
-    <p>
-        Les maladies cardiovasculaires comptent parmi les premières causes de mortalité dans le monde. Au‑delà des facteurs
-        biologiques, les habitudes de vie jouent un rôle central : tabagisme, activité physique, sommeil, santé mentale.
-        L’essor des bases de données massives permet aujourd’hui d’étudier ces liens à grande échelle.
-    </p>
-    <p>
-        Ce projet s’appuie sur un dataset de <strong>319&nbsp;795 individus</strong>, issu de l’enquête américaine BRFSS
-        (CDC). L’objectif est d’identifier les comportements les plus associés à la présence d’une maladie cardiaque
-        (variable <code>HeartDisease</code>).
-    </p>
-
-    <h3>Méthodologie</h3>
-    <p>
-        L’indicateur principal (KPI) est la variable binaire <strong>HeartDisease</strong> (Yes/No). Les variables étudiées
-        incluent des habitudes de vie (tabagisme, consommation d’alcool, activité physique, durée de sommeil, santé mentale),
-        ainsi que des variables de contrôle (BMI, âge, sexe, diabète, santé physique, difficulté à marcher).
-    </p>
-    <p>
-        L’analyse combine statistiques descriptives, visualisations (histogrammes, bar charts, heatmaps de corrélation,
-        boxplots), clustering (K‑means) et analyse en composantes principales (PCA), réalisées sous R.
-    </p>
-
-    <h3>Résultats principaux</h3>
-    <ul>
-        <li>
-            <strong>Prévalence :</strong><br>
-            Environ <strong>10&nbsp;%</strong> des individus déclarent une maladie cardiaque, ce qui permet d’étudier les
-            facteurs associés au risque.
-        </li>
-        <li>
-            <strong>Habitudes de vie :</strong><br>
-            Les fumeurs et les personnes ne pratiquant pas d’activité physique présentent une proportion plus élevée de
-            maladies cardiaques, suggérant un rôle protecteur de l’activité physique et un effet délétère du tabac.
-        </li>
-        <li>
-            <strong>Santé mentale et physique :</strong><br>
-            Une corrélation notable est observée entre mauvaise santé mentale et mauvaise santé physique, ainsi qu’entre BMI
-            élevé et dégradation de la santé physique.
-        </li>
-        <li>
-            <strong>Clustering :</strong><br>
-            Trois profils sont identifiés. Le cluster caractérisé par un BMI élevé et une mauvaise santé physique présente une
-            prévalence de maladie cardiaque d’environ <strong>22,5&nbsp;%</strong>, contre ~7&nbsp;% dans les autres clusters,
-            soit un risque environ <strong>3 fois plus élevé</strong>.
-        </li>
-        <li>
-            <strong>Score de risque :</strong><br>
-            Un <strong>LifestyleRiskScore</strong> (0 à 4) est construit à partir du tabagisme, de l’alcool, de l’absence
-            d’activité physique et d’un sommeil &lt; 6h. La proportion de maladie cardiaque augmente clairement avec ce score.
-        </li>
-        <li>
-            <strong>PCA :</strong><br>
-            La PCA montre que les deux premières composantes expliquent environ <strong>58,6&nbsp;%</strong> de la variance.
-            La majorité des individus se concentre dans une zone centrale, tandis que les profils à risque se situent en
-            périphérie.
-        </li>
-    </ul>
-
-    <h3>Discussion</h3>
-    <p>
-        L’analyse confirme l’impact majeur des habitudes de vie sur le risque cardiovasculaire. L’absence d’activité physique,
-        le tabagisme, un BMI élevé et un mauvais état de santé global sont fortement associés à la présence de maladie
-        cardiaque. Le cumul de comportements défavorables se traduit par une augmentation nette du risque.
-    </p>
-    <p>
-        Ces résultats sont cohérents avec la littérature médicale et illustrent l’intérêt des données massives pour mieux
-        comprendre les profils de risque et orienter les actions de prévention.
-    </p>
-
-    <h3>Compétences mobilisées</h3>
-    <ul>
-        <li><strong>Manipulation de données massives</strong> (300k+ observations) sous R.</li>
-        <li><strong>Statistiques descriptives</strong> et visualisations avancées (ggplot2, heatmaps, boxplots).</li>
-        <li><strong>Clustering (K‑means)</strong> et <strong>analyse en composantes principales (PCA)</strong>.</li>
-        <li><strong>Construction d’indicateurs synthétiques</strong> (LifestyleRiskScore, catégories de mode de vie).</li>
-        <li><strong>Interprétation et vulgarisation</strong> de résultats appliqués à la santé publique.</li>
-    </ul>
-
-</section>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
