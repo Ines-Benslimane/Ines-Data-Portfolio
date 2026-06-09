@@ -5040,18 +5040,18 @@ a:hover {
 }
 
 /* Réduction du bouton Retour au portfolio */
-#header .logo {
-    font-size: 1.1em !important;   /* plus petit */
-    padding: 0.4em 0.8em !important; /* moins de hauteur */
-    letter-spacing: 0.5px;
-}
-/* Réduction du padding du header pour aligner bouton + phrase */
 #header {
-    padding-top: 1.5em !important;
-    padding-bottom: 1.2em !important;
+    height: auto !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
 }
 
-/* Ajustement de la phrase d'accroche */
+#header .logo {
+    font-size: 1.1em !important;
+    padding: 0.4em 0.8em !important;
+    letter-spacing: 0.5px;
+}
+
 #header .accroche-top {
     margin-top: 0.3em;
     font-size: 1.45em;
@@ -5211,11 +5211,5 @@ a:hover {
     }
 }
 
-/* rectification du bouton Portfolio */
-#nav {
-    position: relative !important;
-    top: 0 !important;
-    bottom: auto !important;
-    margin-top: 20px; /* ajuste si tu veux */
-}
+
 
