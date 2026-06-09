@@ -5467,5 +5467,38 @@ verflow-x: auto;
         padding: 2em 1.2em;
     }
 }
+/* Titres plus élégants */
+#project-parcours h2 {
+    font-size: 1.8em !important;
+    color: #5a4634;
+    font-weight: 600;
+}
+
+#project-parcours h3 {
+    font-size: 1.4em !important;
+    color: #6b5644;
+    font-weight: 500;
+}
+/* Flèche animée "glisser" */
+.slide-hint {
+    text-align: center;
+    font-size: 0.95em;
+    color: #6b5644;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.slide-hint .arrow {
+    display: inline-block;
+    margin-left: 6px;
+    animation: slideArrow 1.2s infinite ease-in-out;
+}
+
+@keyframes slideArrow {
+    0% { transform: translateX(0); opacity: 0.4; }
+    50% { transform: translateX(6px); opacity: 1; }
+    100% { transform: translateX(0); opacity: 0.4; }
+}
 
 
