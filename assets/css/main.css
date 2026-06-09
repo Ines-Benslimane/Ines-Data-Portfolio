@@ -5580,5 +5580,9 @@ verflow-x: auto;
     position: relative;
     overflow: visible !important;
 }
+#nav .dropdown:hover .dropdown-content {
+    display: block !important;
+}
+
 
 
