@@ -5232,5 +5232,27 @@ a:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+@media (max-width: 800px) {
+    .post #project-femicide-europe img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+.post #project-femicide-europe table {
+    display: block;
+    o@media (max-width: 800px) {
+    .post #project-femicide-europe .key-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 1.5em !important;
+    }
+
+    .post #project-femicide-europe .stat .number {
+        font-size: 1.8em !important;
+    }
+}
+verflow-x: auto;
+    white-space: nowrap;
+}
 
 
