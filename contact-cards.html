@@ -6,83 +6,90 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <style>
-            .contact-cards {
-                display: flex;
-                gap: 2rem;
-                justify-content: center;
-                flex-wrap: wrap;
-                margin-top: 2rem;
-            }
-            .contact-cards .card {
-                background: rgba(255,255,255,0.05);
-                border: 1px solid rgba(255,255,255,0.15);
-                border-radius: 8px;
-                padding: 2rem;
-                text-align: center;
-                width: 220px;
+            .contact-wrapper {
+                max-width: 600px;
+                margin: 3rem auto;
                 display: flex;
                 flex-direction: column;
+                gap: 1.5rem;
+            }
+            .contact-item {
+                display: flex;
                 align-items: center;
-                gap: 1rem;
+                gap: 1.5rem;
+                padding: 1.5rem 2rem;
+                border: 1px solid #c9b99a;
+                border-radius: 6px;
+                text-decoration: none;
+                color: inherit;
+                transition: background 0.2s;
             }
-            .contact-cards .card .icon {
-                font-size: 2rem;
+            .contact-item:hover {
+                background: rgba(180, 150, 110, 0.1);
             }
-            .contact-cards .card h3 {
-                margin: 0;
+            .contact-item .icon {
+                font-size: 1.5rem;
+                color: #8a6e4b;
+                min-width: 30px;
             }
-            .contact-cards .card p {
-                margin: 0;
-                font-size: 0.9rem;
+            .contact-item .label {
+                font-size: 0.85rem;
+                color: #a08060;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+            .contact-item .value {
+                font-size: 1rem;
+                font-weight: 600;
+                color: #3d2f1f;
             }
         </style>
     </head>
     <body class="is-preload">
-        <!-- Header -->
         <header id="header">
             <a href="index.html" class="logo">Ines Benslimane</a>
         </header>
-        <!-- Menu -->
         <nav id="nav">
             <ul class="links">
                 <li><a href="parcours.html">Mon parcours</a></li>
-                <li class="active"><a href="contact.html">Me contacter</a></li>
+                <li class="active"><a href="contact-cards.html">Me contacter</a></li>
             </ul>
             <ul class="icons">
                 <li><a href="https://www.linkedin.com/in/ines-benslimane" target="_blank" class="icon brands fa-linkedin"></a></li>
                 <li><a href="mailto:ines.benslimane@outlook.fr" class="icon solid fa-envelope"></a></li>
             </ul>
         </nav>
-        <!-- Main -->
         <div id="main">
             <section class="post">
                 <header class="major">
                     <h1>Me contacter</h1>
                     <p>Je suis disponible pour échanger concernant une alternance en data, statistiques ou études médico‑économiques.</p>
                 </header>
-                <div class="contact-cards">
-                    <div class="card">
-                        <span class="icon solid fa-envelope fa-2x"></span>
-                        <h3>Email</h3>
-                        <p>ines.benslimane@outlook.fr</p>
-                        <a href="mailto:ines.benslimane@outlook.fr" class="button primary">M'écrire</a>
-                    </div>
-                    <div class="card">
-                        <span class="icon brands fa-linkedin fa-2x"></span>
-                        <h3>LinkedIn</h3>
-                        <p>Profil professionnel</p>
-                        <a href="https://www.linkedin.com/in/ines-benslimane" target="_blank" class="button">Voir mon profil</a>
-                    </div>
-                    <div class="card">
-                        <span class="icon solid fa-file-pdf fa-2x"></span>
-                        <h3>CV</h3>
-                        <p>Version PDF</p>
-                        <a href="CV_Ines_Benslimane.pdf" class="button">Télécharger</a>
-                    </div>
+                <div class="contact-wrapper">
+                    <a href="mailto:ines.benslimane@outlook.fr" class="contact-item">
+                        <span class="icon solid fa-envelope"></span>
+                        <div>
+                            <div class="label">Email</div>
+                            <div class="value">ines.benslimane@outlook.fr</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ines-benslimane" target="_blank" class="contact-item">
+                        <span class="icon brands fa-linkedin"></span>
+                        <div>
+                            <div class="label">LinkedIn</div>
+                            <div class="value">Ines Benslimane</div>
+                        </div>
+                    </a>
+                    <a href="CV_Ines_Benslimane.pdf" class="contact-item">
+                        <span class="icon solid fa-file-pdf"></span>
+                        <div>
+                            <div class="label">CV</div>
+                            <div class="value">Télécharger mon CV</div>
+                        </div>
+                    </a>
                 </div>
             </section>
         </div>
-        <!-- Footer -->
         <footer id="footer">
             <p class="copyright">© Ines Benslimane</p>
         </footer>
