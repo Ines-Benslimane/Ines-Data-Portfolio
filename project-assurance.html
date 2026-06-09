@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Analyse des données d’assurance automobile</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+
+    <body class="is-preload">
+
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Retour au portfolio</a>
+            </header>
+
+            <!-- Main -->
+            <div id="main">
+                <article class="post">
+
+                    <header class="major">
+                        <h1>Analyse des données d’assurance automobile</h1>
+                    </header>
+
+                    <section id="project-assurance">
+
+                        <!-- Phrase d'accroche -->
+                        <p class="intro-quote">
+                            « Les fumeurs coûtent en moyenne 800&nbsp;€ de plus que les non‑fumeurs, et le montant payé augmente presque proportionnellement au nombre d’accidents. »
+                        </p>
+
+                        <!-- Bloc chiffres clés -->
+                        <div class="key-stats-assurance">
+                            <div class="stat">
+                                <span class="number">500</span>
+                                <span class="label">clients dans la base initiale</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">433</span>
+                                <span class="label">clients après nettoyage</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">0.93</span>
+                                <span class="label">corrélation accidents ↔ montant payé</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">1.23 M€</span>
+                                <span class="label">montant total payé</span>
+                            </div>
+                        </div>
+
+                        <h3>Contexte</h3>
+                        <p>
+                            Ce mini‑projet vise à analyser un jeu de données d’assurance automobile comprenant 500 clients.
+                            Les variables incluent l’âge, le sexe, le statut fumeur, le nombre d’accidents et le montant payé
+                            par l’assureur. L’objectif est d’identifier les profils les plus coûteux et de comprendre les facteurs
+                            associés à des montants élevés.
+                        </p>
+                        <p>
+                            Après nettoyage des valeurs manquantes via <code>dropna()</code>, l’échantillon final contient
+                            <strong>433 individus</strong>, permettant une analyse fiable et cohérente.
+                        </p>
+
+                        <h3>Nettoyage des données</h3>
+                        <p>
+                            L’inspection initiale montre la présence de valeurs manquantes, notamment dans la variable <code>age</code>.
+                            La fonction <code>dropna()</code> a permis de supprimer les lignes incomplètes, garantissant une base propre.
+                        </p>
+                        <p>
+                            Le dataset final contient 433 lignes et 5 variables, toutes complètes.
+                        </p>
+
+                        <h3>Résultats principaux</h3>
+                        <ul>
+                            <li>
+                                <strong>Répartition des âges :</strong><br>
+                                Âge moyen : <strong>48,4 ans</strong> — Médiane : 47 ans — Min : 18 ans — Max : 80 ans.
+                            </li>
+                            <li>
+                                <strong>Accidents :</strong><br>
+                                21,2&nbsp;% des clients n’ont eu aucun accident.  
+                                Moyenne : <strong>2,29 accidents</strong>.  
+                                Maximum : 5 accidents.
+                            </li>
+                            <li>
+                                <strong>Montant payé :</strong><br>
+                                Montant moyen : <strong>2 844 €</strong>.  
+                                Montant maximal : <strong>5 822 €</strong>.  
+                                Montant cumulé : <strong>1 231 796 €</strong>.
+                            </li>
+                            <li>
+                                <strong>Montant moyen par catégorie :</strong><br>
+                                Hommes : 2 873 € — Femmes : 2 812 €.  
+                                Non‑fumeurs : 2 467 € — Fumeurs : <strong>3 268 €</strong>.
+                            </li>
+                            <li>
+                                <strong>Relation accidents ↔ montant payé :</strong><br>
+                                Corrélation très forte : <strong>0,93</strong>.  
+                                Plus un client a d’accidents, plus il coûte cher.
+                            </li>
+                        </ul>
+
+                        <h3>Discussion</h3>
+                        <p>
+                            L’analyse montre que le nombre d’accidents est le facteur le plus déterminant dans le montant payé
+                            par l’assureur. Les fumeurs représentent également un profil plus coûteux, avec un montant moyen
+                            supérieur de près de 800&nbsp;€ à celui des non‑fumeurs.
+                        </p>
+                        <p>
+                            Les cas extrêmes (montants supérieurs à 5 000&nbsp;€) sont rares mais pèsent lourd dans les dépenses
+                            totales. Quelques clients coûtent cher malgré peu d’accidents, suggérant la présence de facteurs non
+                            observés (gravité, type d’accident, véhicule…).
+                        </p>
+
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li><strong>Nettoyage de données</strong> (Pandas : <code>dropna</code>, <code>describe</code>)</li>
+                            <li><strong>Statistiques descriptives</strong> (moyenne, médiane, écart‑type)</li>
+                            <li><strong>Visualisation</strong> (histogrammes, scatter plots avec Matplotlib)</li>
+                            <li><strong>Segmentation</strong> (<code>groupby</code>, <code>pd.cut</code>)</li>
+                            <li><strong>Analyse de corrélation</strong> (<code>np.corrcoef</code>)</li>
+                            <li><strong>Interprétation appliquée à l’assurance</strong></li>
+                        </ul>
+
+                    </section>
+
+                </article>
+            </div>
+
+        </div>
+
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
