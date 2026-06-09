@@ -4938,6 +4938,10 @@ a:hover {
    STYLE PAGE FEMINICIDES — PREMIUM
    ============================ */
 
+/* ============================
+   FEMINICIDES — STYLE PREMIUM IDENTIQUE AUX AUTRES PROJETS
+   ============================ */
+
 .post #project-femicide-europe {
     background: #faf7f4;
     padding: 3em 2em;
@@ -4948,15 +4952,7 @@ a:hover {
     box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
 }
 
-/* Titres */
-.post #project-femicide-europe h2,
-.post #project-femicide-europe h3,
-.post #project-femicide-europe h4 {
-    color: #5a4634;
-    font-weight: 600;
-}
-
-/* Intro */
+/* Accroche */
 .post .intro-quote {
     font-style: italic;
     font-size: 1.25em;
@@ -4964,12 +4960,6 @@ a:hover {
     color: #5a4634;
     margin-top: 0.5em;
     opacity: 0.9;
-}
-
-/* Paragraphes */
-.post #project-femicide-europe p {
-    color: #3b2f2f;
-    line-height: 1.7;
 }
 
 /* Bloc chiffres clés */
@@ -5001,56 +4991,13 @@ a:hover {
     color: #6b5644;
 }
 
-/* Images */
-.post #project-femicide-europe img {
-    width: 65%;
-    margin: 1.5em auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(90, 70, 52, 0.12);
+/* Responsive */
+@media (max-width: 800px) {
+    .post #project-femicide-europe .key-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Tableaux */
-.post #project-femicide-europe table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 2em 0;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
-}
-
-.post #project-femicide-europe th {
-    background: #5a4634;
-    color: white;
-    padding: 0.9em;
-    text-align: left;
-}
-
-.post #project-femicide-europe td {
-    padding: 0.9em;
-    border-bottom: 1px solid #d8cfc7;
-}
-
-/* Réduction du bouton Retour au portfolio */
-#header .logo {
-    font-size: 1.1em !important;
-    padding: 0.4em 0.8em !important;
-    letter-spacing: 0.5px;
-}
-#header {
-    padding-top: 1.5em !important;
-    padding-bottom: 1.2em !important;
-}
-#header .accroche-top {
-    margin-top: 0.3em;
-    font-size: 1.45em;
-    display: block;
-}
-#nav {
-    margin-top: 0 !important;
-}
 /* ============================
    STYLE PAGE PSYCHOTROPES
    ============================ */
