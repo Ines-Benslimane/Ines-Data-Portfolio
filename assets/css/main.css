@@ -5399,5 +5399,73 @@ verflow-x: auto;
         height: auto !important;
     }
 }
+/* ============================
+   DIABETES — STYLE PREMIUM IDENTIQUE AUX AUTRES PROJETS
+   ============================ */
+
+.post #project-diabetes {
+    background: #faf7f4;
+    padding: 3em 2em;
+    border-radius: 14px;
+    border: 1px solid #d8cfc7;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
+}
+
+/* Accroche */
+.post .intro-quote {
+    font-style: italic;
+    font-size: 1.25em;
+    text-align: center;
+    color: #5a4634;
+    margin-top: 0.5em;
+    opacity: 0.9;
+}
+
+/* Bloc chiffres clés */
+.post #project-diabetes .key-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    margin: 2.5em 0;
+    padding: 2em;
+    background: #f4ede7;
+    border-radius: 14px;
+    border: 1px solid #d8cfc7;
+    box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
+}
+
+.post #project-diabetes .stat {
+    text-align: center;
+}
+
+.post #project-diabetes .stat .number {
+    display: block;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #5a4634;
+}
+
+.post #project-diabetes .stat .label {
+    font-size: 0.95em;
+    color: #6b5644;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .post #project-diabetes .key-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1.5em;
+    }
+
+    .post #project-diabetes .stat .number {
+        font-size: 1.8em;
+    }
+
+    .post #project-diabetes {
+        padding: 2em 1.2em;
+    }
+}
 
 
