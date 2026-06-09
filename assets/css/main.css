@@ -5210,6 +5210,12 @@ a:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* rectification du bouton Portfolio */
 #nav {
-    margin-top: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    bottom: auto !important;
+    margin-top: 20px; /* ajuste si tu veux */
 }
+
