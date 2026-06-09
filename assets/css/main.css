@@ -5565,5 +5565,16 @@ verflow-x: auto;
 #nav .icons a:hover {
     color: #a68a6a !important;
 }
+/* Permet au dropdown d'apparaître AU-DESSUS du menu */
+#nav {
+    position: relative;
+    z-index: 9999;
+}
+
+/* Permet au dropdown de dépasser la barre horizontale */
+#nav .links {
+    position: relative;
+    overflow: visible !important;
+}
 
 
