@@ -5505,40 +5505,50 @@ verflow-x: auto;
     100% { transform: translateX(0) rotate(-45deg); opacity: 0.4; }
 }
 /* ============================
-   MENU PREMIUM — INES
+   DROPDOWN MENU — INES
    ============================ */
 
-/* Liens principaux */
-#nav .links a {
-    color: #5a4634 !important;
-    font-weight: 600;
-    font-size: 1.05em;
+#nav .dropdown {
+    position: relative;
 }
 
-/* Sous-menu */
-#nav .submenu ul {
+#nav .dropbtn {
+    cursor: pointer;
+    color: #5a4634 !important;
+    font-weight: 600;
+}
+
+#nav .dropdown-content {
     display: none;
     position: absolute;
     background: #faf7f4;
-    padding: 0.8em 1em;
+    min-width: 180px;
     border-radius: 10px;
     border: 1px solid #d8cfc7;
-    margin-top: 0.5em;
+    padding: 0.5em 0;
     box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
+    z-index: 999;
 }
 
-#nav .submenu:hover ul {
+#nav .dropdown-content li {
+    list-style: none;
+}
+
+#nav .dropdown-content a {
     display: block;
-}
-
-#nav .submenu ul li {
-    margin: 0.4em 0;
-}
-
-#nav .submenu ul li a {
-    font-weight: 500;
+    padding: 0.6em 1em;
     color: #6b5644 !important;
     font-size: 0.95em;
+    font-weight: 500;
+}
+
+#nav .dropdown-content a:hover {
+    background: #e9e1d9;
+}
+
+/* Affichage au survol */
+#nav .dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Icônes LinkedIn + Mail */
@@ -5551,6 +5561,3 @@ verflow-x: auto;
 #nav .icons a:hover {
     color: #a68a6a !important;
 }
-
-
-
