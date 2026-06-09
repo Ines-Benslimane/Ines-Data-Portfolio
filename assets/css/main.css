@@ -5542,6 +5542,10 @@ verflow-x: auto;
 #nav .dropdown-content li {
     list-style: none;
 }
+/* Débloque l'affichage du dropdown sur ordinateur */
+#nav .links {
+    overflow: visible !important;
+}
 
 #nav .dropdown-content a {
     display: block;
