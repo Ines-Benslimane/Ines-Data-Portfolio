@@ -5505,7 +5505,7 @@ verflow-x: auto;
     100% { transform: translateX(0) rotate(-45deg); opacity: 0.4; }
 }
 /* ============================
-   DROPDOWN MENU — INES
+   DROPDOWN DESKTOP — INES
    ============================ */
 
 #nav .dropdown {
@@ -5518,18 +5518,27 @@ verflow-x: auto;
     font-weight: 600;
 }
 
+/* Contenu du dropdown (caché par défaut) */
 #nav .dropdown-content {
     display: none;
     position: absolute;
+    top: 100%;
+    left: 0;
     background: #faf7f4;
-    min-width: 180px;
+    min-width: 200px;
     border-radius: 10px;
     border: 1px solid #d8cfc7;
     padding: 0.5em 0;
     box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
-    z-index: 999;
+    z-index: 9999;
 }
 
+/* Affichage au survol (desktop) */
+#nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style des liens du dropdown */
 #nav .dropdown-content li {
     list-style: none;
 }
@@ -5546,12 +5555,7 @@ verflow-x: auto;
     background: #e9e1d9;
 }
 
-/* Affichage au survol */
-#nav .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Icônes LinkedIn + Mail */
+/* Icônes */
 #nav .icons a {
     color: #5a4634 !important;
     font-size: 1.3em;
@@ -5561,3 +5565,4 @@ verflow-x: auto;
 #nav .icons a:hover {
     color: #a68a6a !important;
 }
+
