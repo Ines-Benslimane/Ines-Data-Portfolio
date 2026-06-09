@@ -5538,25 +5538,23 @@ verflow-x: auto;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Animation */
 .contact-cards .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(90, 70, 52, 0.12);
 }
 
+/* Icônes */
 .contact-cards .card .icon {
     font-size: 2.2em;
-    color: #5a4634;
     margin-bottom: 0.5em;
 }
 
-.contact-cards .card h3 {
-    margin-bottom: 0.3em;
-    color: #5a4634;
-}
-
-.contact-cards .card p {
-    margin-bottom: 1em;
-    color: #6b5644;
+/* Couleurs du texte (correction du blanc) */
+.contact-cards .card h3,
+.contact-cards .card p,
+.contact-cards .card .icon {
+    color: #5a4634 !important;
 }
 
 /* Boutons */
@@ -5581,6 +5579,5 @@ verflow-x: auto;
 .contact-cards .button.primary:hover {
     background: #7a6048;
 }
-
 
 
