@@ -4938,41 +4938,67 @@ a:hover {
    STYLE PAGE FEMINICIDES — PREMIUM
    ============================ */
 
-/* Conteneur principal */
 .post #project-femicide-europe {
-    background: #faf7f4 !important;
-    padding: 3em 2em !important;
-    border-radius: 14px !important;
-    border: 1px solid #d8cfc7 !important;
-    max-width: 900px !important;
-    margin: 0 auto !important;
-    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08) !important;
+    background: #faf7f4;
+    padding: 3em 2em;
+    border-radius: 14px;
+    border: 1px solid #d8cfc7;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
 }
 
 /* Titres */
 .post #project-femicide-europe h2,
 .post #project-femicide-europe h3,
 .post #project-femicide-europe h4 {
-    color: #5a4634 !important;
-    font-weight: 600 !important;
+    color: #5a4634;
+    font-weight: 600;
+}
+
+/* Intro */
+.post .intro-quote {
+    font-style: italic;
+    font-size: 1.25em;
+    text-align: center;
+    color: #5a4634;
+    margin-top: 0.5em;
+    opacity: 0.9;
 }
 
 /* Paragraphes */
 .post #project-femicide-europe p {
-    color: #3b2f2f !important;
-    line-height: 1.7 !important;
+    color: #3b2f2f;
+    line-height: 1.7;
 }
 
-/* Première phrase (intro) */
-.post #project-femicide-europe p:first-of-type {
-    font-size: 1.2em;
-    font-style: italic;
+/* Bloc chiffres clés */
+.post #project-femicide-europe .key-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    margin: 2.5em 0;
+    padding: 2em;
     background: #f4ede7;
-    padding: 1.5em;
-    border-radius: 12px;
+    border-radius: 14px;
     border: 1px solid #d8cfc7;
-    color: #4a3b32;
-    box-shadow: 0 6px 16px rgba(90, 70, 52, 0.10);
+    box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
+}
+
+.post #project-femicide-europe .stat {
+    text-align: center;
+}
+
+.post #project-femicide-europe .stat .number {
+    display: block;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #5a4634;
+}
+
+.post #project-femicide-europe .stat .label {
+    font-size: 0.95em;
+    color: #6b5644;
 }
 
 /* Images */
@@ -5006,18 +5032,6 @@ a:hover {
     padding: 0.9em;
     border-bottom: 1px solid #d8cfc7;
 }
-
-.post #project-femicide-europe tr:last-child td {
-    border-bottom: none;
-}
-
-/* ============================
-   BLOC CHIFFRES CLÉS — PREMIUM
-   ============================ */
-
-.post #project-femicide-europe .key-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
 
 /* Réduction du bouton Retour au portfolio */
 #header .logo {
