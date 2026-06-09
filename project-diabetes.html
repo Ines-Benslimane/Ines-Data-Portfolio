@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Prédiction du diabète – Big Data & Machine Learning</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+
+    <body class="is-preload">
+
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Retour au portfolio</a>
+            </header>
+
+            <!-- Main -->
+            <div id="main">
+                <article class="post">
+
+                    <header class="major">
+                        <h1>Prédiction du diabète<br>avec Big Data & Machine Learning</h1>
+                    </header>
+
+                    <section id="project-diabetes">
+
+                        <!-- Phrase d'accroche -->
+                        <p class="intro-quote">
+                            « Le taux de glucose est corrélé à 0,51 avec le diabète, et le BMI apparaît comme le facteur prédictif le plus fort. »
+                        </p>
+
+                        <!-- Bloc chiffres clés -->
+                        <div class="key-stats-diabetes">
+                            <div class="stat">
+                                <span class="number">768</span>
+                                <span class="label">patientes Pima dans le dataset initial</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">0.52</span>
+                                <span class="label">corrélation glucose ↔ diabète</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">76.6 %</span>
+                                <span class="label">accuracy du modèle Sparklyr</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">0.78</span>
+                                <span class="label">AUC du Random Forest H2O</span>
+                            </div>
+                        </div>
+
+                        <h3>Contexte</h3>
+                        <p>
+                            Ce projet utilise le jeu de données <strong>Pima Indians Diabetes</strong>, un dataset médical classique
+                            contenant 768 femmes âgées de 20 ans et plus, avec 8 mesures de santé (grossesses, glucose, tension,
+                            épaisseur de peau, insuline, BMI, risque génétique, âge) et une variable cible binaire
+                            <code>Outcome</code> (0 = non diabétique, 1 = diabétique).
+                        </p>
+                        <p>
+                            L’objectif est de <strong>nettoyer les données</strong>, d’identifier les <strong>facteurs de risque</strong> associés au diabète
+                            et de <strong>modéliser la variable Outcome</strong> à l’aide de Sparklyr et H2O, en comparant plusieurs modèles
+                            de machine learning.
+                        </p>
+
+                        <h3>Nettoyage et préparation des données</h3>
+                        <p>
+                            L’analyse montre qu’il n’y a pas de valeurs manquantes, mais de nombreux <strong>zéros impossibles</strong> dans
+                            certaines variables biologiques (Glucose, BloodPressure, SkinThickness, Insulin, BMI). Ces zéros ont été
+                            supprimés, à l’exception de <code>Pregnancies</code> et <code>Outcome</code> où la valeur 0 est légitime.
+                        </p>
+                        <p>
+                            Des <strong>valeurs extrêmes</strong> ont été détectées pour <code>Insulin</code> et <code>DiabetesPedigreeFunction</code>. La règle des
+                            <strong>1,5 × IQR</strong> a été appliquée pour filtrer les outliers, ce qui permet de réduire leur influence sur les
+                            analyses et les modèles.
+                        </p>
+
+                        <h3>Analyse descriptive</h3>
+                        <ul>
+                            <li>
+                                <strong>Corrélation glucose ↔ diabète :</strong><br>
+                                La corrélation de Pearson entre <code>Glucose</code> et <code>Outcome</code> est d’environ <strong>0,52</strong>, indiquant une
+                                association positive nette entre le taux de glucose et la probabilité de diabète.
+                            </li>
+                            <li>
+                                <strong>Profil des patientes à risque :</strong><br>
+                                Les patientes diabétiques présentent en moyenne un <strong>glucose plus élevé</strong> (~143), un
+                                <strong>BMI plus élevé</strong> (~35,8, donc obésité) et un <strong>âge plus avancé</strong> (~36 ans) que les non diabétiques.
+                            </li>
+                            <li>
+                                <strong>Visualisation :</strong><br>
+                                Des boxplots comparant le glucose selon <code>Outcome</code> montrent une différence nette entre diabétiques
+                                et non diabétiques, particulièrement après filtrage des outliers.
+                            </li>
+                            <li>
+                                <strong>Biais des données :</strong><br>
+                                Le dataset ne contient que des femmes et une majorité de patientes entre 20 et 40 ans, ce qui limite
+                                la généralisation des résultats.
+                            </li>
+                        </ul>
+
+                        <h3>Modélisation avec Sparklyr</h3>
+                        <p>
+                            Les données nettoyées ont été divisées en un jeu d’entraînement (70&nbsp;%) et un jeu de test (30&nbsp;%) via
+                            <code>sdf_random_split</code>. Un modèle de <strong>régression logistique</strong> a été entraîné avec <code>Glucose</code>, <code>BMI</code> et
+                            <code>Age</code> comme variables explicatives.
+                        </p>
+                        <p>
+                            L’analyse des coefficients montre que les trois variables augmentent la probabilité de diabète, avec un
+                            effet particulièrement marqué pour le <strong>BMI</strong>, suivi du glucose et de l’âge. L’accuracy obtenue sur le jeu
+                            de test est d’environ <strong>76,6&nbsp;%</strong>.
+                        </p>
+
+                        <h3>Modélisation avec H2O</h3>
+                        <p>
+                            Le dataset a également été importé dans H2O, avec <code>Outcome</code> convertie en facteur. Trois modèles ont
+                            été testés : <strong>GLM (régression logistique)</strong>, <strong>Random Forest</strong> et <strong>Gradient Boosted Trees (GBM)</strong>.
+                        </p>
+                        <ul>
+                            <li><strong>GLM :</strong> accuracy ~76&nbsp;%.</li>
+                            <li><strong>Random Forest :</strong> accuracy ~75,6&nbsp;%, AUC = <strong>0,78</strong>, LogLoss = <strong>0,54</strong>.</li>
+                            <li><strong>GBM :</strong> accuracy ~73,1&nbsp;%, AUC = 0,76, LogLoss = 0,70.</li>
+                        </ul>
+                        <p>
+                            Le <strong>Random Forest</strong> apparaît comme le modèle le plus performant globalement, grâce à un AUC élevé
+                            et un LogLoss plus faible, ce qui indique une meilleure capacité à distinguer les cas de diabète et des
+                            probabilités plus fiables.
+                        </p>
+
+                        <h3>Discussion</h3>
+                        <p>
+                            Ce projet montre que le <strong>glucose</strong> et le <strong>BMI</strong> sont des facteurs clés dans la prédiction du diabète,
+                            avec un rôle particulièrement important du surpoids. Les modèles de machine learning testés offrent des
+                            performances correctes, mais restent limités par la taille et les biais du dataset.
+                        </p>
+                        <p>
+                            Le déséquilibre des classes (plus de non diabétiques que de diabétiques) peut rendre l’accuracy trompeuse,
+                            d’où l’intérêt de compléter l’évaluation par des métriques comme l’AUC, le LogLoss ou le F1‑score.
+                        </p>
+
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li><strong>Nettoyage avancé</strong> (gestion des zéros impossibles, outliers via 1,5 × IQR).</li>
+                            <li><strong>Statistiques descriptives</strong> et corrélations (Pearson).</li>
+                            <li><strong>Visualisation</strong> (boxplots comparatifs, exploration des distributions).</li>
+                            <li><strong>Modélisation avec Sparklyr</strong> (régression logistique, split train/test).</li>
+                            <li><strong>Modélisation avec H2O</strong> (GLM, Random Forest, GBM).</li>
+                            <li><strong>Évaluation de modèles</strong> (Accuracy, AUC, LogLoss) et interprétation appliquée à la santé.</li>
+                        </ul>
+
+                    </section>
+
+                </article>
+            </div>
+
+        </div>
+
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
