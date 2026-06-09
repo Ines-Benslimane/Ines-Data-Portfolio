@@ -4934,37 +4934,49 @@ a:hover {
     font-style: italic;
 }
 
-/* ================================
-   STYLE EPURE POUR LA SECTION FEMINICIDES
-   ================================ */
+/* ============================
+   STYLE PAGE FEMINICIDES — PREMIUM
+   ============================ */
 
-#project-femicide-europe {
-    background: #faf7f4;
-    padding: 3em 2em;
-    border-radius: 14px;
+/* Conteneur principal */
+.post #project-femicide-europe {
+    background: #faf7f4 !important;
+    padding: 3em 2em !important;
+    border-radius: 14px !important;
+    border: 1px solid #d8cfc7 !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08) !important;
+}
+
+/* Titres */
+.post #project-femicide-europe h2,
+.post #project-femicide-europe h3,
+.post #project-femicide-europe h4 {
+    color: #5a4634 !important;
+    font-weight: 600 !important;
+}
+
+/* Paragraphes */
+.post #project-femicide-europe p {
+    color: #3b2f2f !important;
+    line-height: 1.7 !important;
+}
+
+/* Première phrase (intro) */
+.post #project-femicide-europe p:first-of-type {
+    font-size: 1.2em;
+    font-style: italic;
+    background: #f4ede7;
+    padding: 1.5em;
+    border-radius: 12px;
     border: 1px solid #d8cfc7;
-    max-width: 900px;
-    margin: 3em auto;
-    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
+    color: #4a3b32;
+    box-shadow: 0 6px 16px rgba(90, 70, 52, 0.10);
 }
 
-#project-femicide-europe h2,
-#project-femicide-europe h3,
-#project-femicide-europe h4 {
-    color: #5a4634;
-    font-weight: 600;
-}
-
-#project-femicide-europe p {
-    color: #3b2f2f;
-    line-height: 1.7;
-}
-
-#project-femicide-europe ul li {
-    margin-bottom: 0.6em;
-}
-
-#project-femicide-europe img {
+/* Images */
+.post #project-femicide-europe img {
     width: 65%;
     margin: 1.5em auto;
     display: block;
@@ -4972,7 +4984,8 @@ a:hover {
     box-shadow: 0 6px 16px rgba(90, 70, 52, 0.12);
 }
 
-#project-femicide-europe table {
+/* Tableaux */
+.post #project-femicide-europe table {
     width: 100%;
     border-collapse: collapse;
     margin: 2em 0;
@@ -4982,62 +4995,29 @@ a:hover {
     box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
 }
 
-#project-femicide-europe th {
+.post #project-femicide-europe th {
     background: #5a4634;
     color: white;
     padding: 0.9em;
     text-align: left;
 }
 
-#project-femicide-europe td {
+.post #project-femicide-europe td {
     padding: 0.9em;
     border-bottom: 1px solid #d8cfc7;
 }
 
-#project-femicide-europe tr:last-child td {
+.post #project-femicide-europe tr:last-child td {
     border-bottom: none;
 }
-#project-femicide-europe p:first-of-type {
-    font-size: 1.2em;
-    font-style: italic;
-    background: #f7f2ee;
-    padding: 1.5em;
-    border-radius: 10px;
-    border: 1px solid #e0d6cf;
-    color: #4a3b32;
-    box-shadow: 0 6px 16px rgba(90, 70, 52, 0.10);
-}
-/* Correction du bloc chiffres clés */
-/* Bloc chiffres clés — version premium */
-#project-femicide-europe .key-stats {
+
+/* ============================
+   BLOC CHIFFRES CLÉS — PREMIUM
+   ============================ */
+
+.post #project-femicide-europe .key-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5em;
-    margin: 2.5em 0;
-    padding: 2.2em 2em;
-    background: #f7f2ee;
-    border-radius: 14px;
-    border: 1px solid #d8cfc7;
-    box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
-}
-
-#project-femicide-europe .stat {
-    text-align: center;
-}
-
-#project-femicide-europe .stat .number {
-    display: block;
-    font-size: 2.4em;
-    font-weight: 700;
-    color: #5a4634;
-    margin-bottom: 0.2em;
-}
-
-#project-femicide-europe .stat .label {
-    font-size: 1em;
-    color: #6b5644;
-    letter-spacing: 0.3px;
-}
 
 /* Réduction du bouton Retour au portfolio */
 #header .logo {
