@@ -5255,4 +5255,125 @@ verflow-x: auto;
     white-space: nowrap;
 }
 
+/* ============================
+   FEMINICIDES — STYLE PREMIUM IDENTIQUE AUX AUTRES PROJETS
+   ============================ */
+
+/* Conteneur principal */
+.post #project-femicide-europe {
+    background: #faf7f4;
+    padding: 3em 2em;
+    border-radius: 14px;
+    border: 1px solid #d8cfc7;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
+}
+
+/* Accroche */
+.post .intro-quote {
+    font-style: italic;
+    font-size: 1.25em;
+    text-align: center;
+    color: #5a4634;
+    margin-top: 0.5em;
+    opacity: 0.9;
+}
+
+/* Paragraphes */
+.post #project-femicide-europe p {
+    color: #3b2f2f;
+    line-height: 1.7;
+}
+
+/* ============================
+   BLOC CHIFFRES CLÉS
+   ============================ */
+
+.post #project-femicide-europe .key-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    margin: 2.5em 0;
+    padding: 2em;
+    background: #f4ede7;
+    border-radius: 14px;
+    border: 1px solid #d8cfc7;
+    box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
+}
+
+.post #project-femicide-europe .stat {
+    text-align: center;
+}
+
+.post #project-femicide-europe .stat .number {
+    display: block;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #5a4634;
+}
+
+.post #project-femicide-europe .stat .label {
+    font-size: 0.95em;
+    color: #6b5644;
+}
+
+/* ============================
+   IMAGES RESPONSIVE
+   ============================ */
+
+@media (max-width: 800px) {
+    .post #project-femicide-europe img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* ============================
+   TABLEAU RESPONSIVE
+   ============================ */
+
+.post #project-femicide-europe .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5em 0;
+}
+
+.post #project-femicide-europe table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.post #project-femicide-europe th,
+.post #project-femicide-europe td {
+    white-space: nowrap;
+}
+
+/* ============================
+   RESPONSIVE — BLOC CHIFFRES CLÉS
+   ============================ */
+
+@media (max-width: 800px) {
+    .post #project-femicide-europe .key-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 1.5em !important;
+    }
+
+    .post #project-femicide-europe .stat .number {
+        font-size: 1.8em !important;
+    }
+}
+
+/* ============================
+   RESPONSIVE — CONTENEUR
+   ============================ */
+
+@media (max-width: 800px) {
+    .post #project-femicide-europe {
+        padding: 2em 1.2em !important;
+    }
+}
+
 
