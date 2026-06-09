@@ -5504,6 +5504,53 @@ verflow-x: auto;
     50% { transform: translateX(6px) rotate(-45deg); opacity: 1; }
     100% { transform: translateX(0) rotate(-45deg); opacity: 0.4; }
 }
+/* ============================
+   MENU PREMIUM — INES
+   ============================ */
+
+/* Liens principaux */
+#nav .links a {
+    color: #5a4634 !important;
+    font-weight: 600;
+    font-size: 1.05em;
+}
+
+/* Sous-menu */
+#nav .submenu ul {
+    display: none;
+    position: absolute;
+    background: #faf7f4;
+    padding: 0.8em 1em;
+    border-radius: 10px;
+    border: 1px solid #d8cfc7;
+    margin-top: 0.5em;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
+}
+
+#nav .submenu:hover ul {
+    display: block;
+}
+
+#nav .submenu ul li {
+    margin: 0.4em 0;
+}
+
+#nav .submenu ul li a {
+    font-weight: 500;
+    color: #6b5644 !important;
+    font-size: 0.95em;
+}
+
+/* Icônes LinkedIn + Mail */
+#nav .icons a {
+    color: #5a4634 !important;
+    font-size: 1.3em;
+    transition: 0.2s ease;
+}
+
+#nav .icons a:hover {
+    color: #a68a6a !important;
+}
 
 
 
