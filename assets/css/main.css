@@ -5598,6 +5598,30 @@ verflow-x: auto;
 #nav .dropdown:hover .dropdown-content {
     display: block !important;
 }
+/* Permet au dropdown de s'afficher sur desktop (Massively bloque sinon) */
+#nav .links {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* Le bouton "Mes projets" doit être un conteneur vertical */
+#nav .links > li.dropdown {
+    position: relative !important;
+    display: block !important;
+}
+
+/* Le dropdown doit sortir du flux flex */
+#nav .dropdown-content {
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+/* Affichage au survol */
+#nav .dropdown:hover .dropdown-content {
+    display: block !important;
+}
 
 
 
