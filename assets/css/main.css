@@ -5518,6 +5518,69 @@ verflow-x: auto;
 #nav .icons a:hover {
     color: #a68a6a !important;
 }
+/* Cartes de contact – Ines */
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+    margin-top: 2em;
+}
+
+.contact-cards .card {
+    background: #faf7f4;
+    border: 1px solid #d8cfc7;
+    border-radius: 12px;
+    padding: 2em 1.5em;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(90, 70, 52, 0.12);
+}
+
+.contact-cards .card .icon {
+    font-size: 2.2em;
+    color: #5a4634;
+    margin-bottom: 0.5em;
+}
+
+.contact-cards .card h3 {
+    margin-bottom: 0.3em;
+    color: #5a4634;
+}
+
+.contact-cards .card p {
+    margin-bottom: 1em;
+    color: #6b5644;
+}
+
+/* Boutons */
+.contact-cards .button {
+    background: #f2e9e2;
+    color: #5a4634 !important;
+    border-radius: 8px;
+    padding: 0.6em 1.4em;
+    font-weight: 600;
+    border: 1px solid #d8cfc7;
+}
+
+.contact-cards .button:hover {
+    background: #e8ddd4;
+}
+
+.contact-cards .button.primary {
+    background: #5a4634;
+    color: #fff !important;
+}
+
+.contact-cards .button.primary:hover {
+    background: #7a6048;
+}
 
 
 
