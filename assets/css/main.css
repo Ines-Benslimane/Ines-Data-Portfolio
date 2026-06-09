@@ -5467,38 +5467,43 @@ verflow-x: auto;
         padding: 2em 1.2em;
     }
 }
-/* Titres plus élégants */
-#project-parcours h2 {
-    font-size: 1.8em !important;
-    color: #5a4634;
+#parcours h2 {
+    font-size: 1.7em !important;
     font-weight: 600;
+    color: #5a4634;
 }
 
-#project-parcours h3 {
-    font-size: 1.4em !important;
-    color: #6b5644;
+#parcours h3 {
+    font-size: 1.3em !important;
     font-weight: 500;
-}
-/* Flèche animée "glisser" */
-.slide-hint {
-    text-align: center;
-    font-size: 0.95em;
     color: #6b5644;
-    margin-top: -10px;
-    margin-bottom: 15px;
-    opacity: 0.9;
 }
 
-.slide-hint .arrow {
+#parcours .scroll-indicator {
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    opacity: 0.85;
+    font-size: 0.9em;
+    color: #6b5644;
+    letter-spacing: 0.5px;
+}
+
+#parcours .scroll-indicator .arrow {
     display: inline-block;
     margin-left: 6px;
-    animation: slideArrow 1.2s infinite ease-in-out;
+    border: solid #6b5644;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(-45deg);
+    animation: arrowMove 1.2s infinite ease-in-out;
 }
 
-@keyframes slideArrow {
-    0% { transform: translateX(0); opacity: 0.4; }
-    50% { transform: translateX(6px); opacity: 1; }
-    100% { transform: translateX(0); opacity: 0.4; }
+@keyframes arrowMove {
+    0% { transform: translateX(0) rotate(-45deg); opacity: 0.4; }
+    50% { transform: translateX(6px) rotate(-45deg); opacity: 1; }
+    100% { transform: translateX(0) rotate(-45deg); opacity: 0.4; }
 }
+
 
 
