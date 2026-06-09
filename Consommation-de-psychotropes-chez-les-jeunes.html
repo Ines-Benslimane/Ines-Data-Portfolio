@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Consommation de psychotropes chez les jeunes</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+
+    <body class="is-preload">
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Retour au portfolio</a>
+            </header>
+
+            <!-- Main -->
+            <div id="main">
+                <article class="post">
+                    <header class="major">
+                        <h1>Consommation de psychotropes chez les enfants et adolescents<br />en France (2014–2023)</h1>
+                    </header>
+
+                    <section id="project-psychotropes-france">
+
+                        <!-- Phrase d'accroche -->
+                        <p class="intro-quote">
+                            « En 2023, plus de 17&nbsp;millions de jeunes ont reçu au moins un médicament psychotrope en France. »
+                        </p>
+
+                        <!-- Bloc chiffres clés -->
+                        <div class="key-stats-psy">
+                            <div class="stat">
+                                <span class="number">16,5 M</span>
+                                <span class="label">bénéficiaires en 2014</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">17,1 M</span>
+                                <span class="label">bénéficiaires en 2023</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">2,2e-16</span>
+                                <span class="label">p-value du chi-deux (sexe)</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">2</span>
+                                <span class="label">années comparées (2014, 2023)</span>
+                            </div>
+                        </div>
+
+                        <h3>Contexte</h3>
+                        <p>
+                            La consommation de médicaments psychotropes chez les enfants et adolescents constitue aujourd’hui un enjeu
+                            important de santé publique. Les études internationales montrent une hausse des prescriptions en population
+                            pédiatrique, et les données françaises issues de l’Assurance maladie confirment cette tendance entre 2014 et 2023.
+                        </p>
+
+                        <h3>Méthodologie</h3>
+                        <p>
+                            L’analyse repose sur deux bases de données open‑data de l’Assurance maladie (2014 et 2023). Les données ont été
+                            importées et nettoyées sous R, puis filtrées pour ne conserver que les enfants et adolescents. Les médicaments
+                            psychotropes ont été identifiés via la classification ATC (codes commençant par la lettre <code>N</code>).
+                            Les deux années ont ensuite été fusionnées pour permettre la comparaison.
+                        </p>
+                        <p>
+                            L’étude s’appuie sur des statistiques descriptives du nombre de bénéficiaires selon l’année et le sexe, complétées
+                            par un graphique en barres et un test du chi‑deux afin d’évaluer l’existence de différences significatives entre filles
+                            et garçons.
+                        </p>
+
+                        <h3>Résultats principaux</h3>
+                        <ul>
+                            <li>
+                                <strong>Augmentation globale :</strong><br>
+                                Le nombre total de bénéficiaires de psychotropes passe d’environ <strong>16,5&nbsp;millions</strong> en 2014
+                                à <strong>17,1&nbsp;millions</strong> en 2023, soit une hausse d’environ 600&nbsp;000 jeunes.
+                            </li>
+                            <li>
+                                <strong>Différences selon le sexe :</strong><br>
+                                En 2014, les filles sont légèrement plus nombreuses (8&nbsp;291&nbsp;049) que les garçons (8&nbsp;256&nbsp;420).
+                                En 2023, la tendance s’inverse : les garçons (8&nbsp;564&nbsp;931) dépassent légèrement les filles (8&nbsp;544&nbsp;341).
+                            </li>
+                            <li>
+                                <strong>Significativité statistique :</strong><br>
+                                Le test du chi‑deux montre une p‑value <strong>&lt; 2.2e‑16</strong>, indiquant que la différence observée
+                                entre filles et garçons est statistiquement significative, même si son ampleur reste limitée.
+                            </li>
+                            <li>
+                                <strong>Cohérence avec la littérature :</strong><br>
+                                Les travaux récents (par exemple Ponnou et al.) confirment une augmentation de la prévalence de la consommation
+                                de psychotropes chez les jeunes, avec des différences selon les classes thérapeutiques (antidépresseurs,
+                                anxiolytiques, psychostimulants, antipsychotiques).
+                            </li>
+                        </ul>
+
+                        <h3>Visualisation</h3>
+                        <p>
+                            Un graphique en barres illustre l’évolution du nombre de bénéficiaires entre 2014 et 2023, en distinguant filles
+                            et garçons. Il montre une augmentation globale et une répartition relativement équilibrée entre les sexes, avec
+                            une légère inversion des niveaux entre les deux années.
+                        </p>
+
+                        <h3>Discussion</h3>
+                        <p>
+                            Cette analyse met en évidence une augmentation de la consommation de psychotropes chez les enfants et adolescents
+                            en France, ainsi que des différences significatives selon le sexe. Les écarts restent toutefois modérés dans les
+                            données agrégées, et la littérature suggère que les différences sont plus marquées lorsqu’on distingue les classes
+                            de médicaments.
+                        </p>
+                        <p>
+                            L’étude présente certaines limites : utilisation de données agrégées, seulement deux années d’observation, absence
+                            de détail par classe thérapeutique. Malgré cela, elle souligne la nécessité de poursuivre les recherches sur les
+                            pratiques de prescription et la santé mentale des jeunes.
+                        </p>
+
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li><strong>Manipulation de données sous R</strong> (import, nettoyage, fusion de bases open‑data).</li>
+                            <li><strong>Filtrage et sélection</strong> de populations et de classes thérapeutiques via la classification ATC.</li>
+                            <li><strong>Statistiques descriptives</strong> et <strong>test du chi‑deux</strong> pour comparer les sexes.</li>
+                            <li><strong>Visualisation</strong> de données (graphique en barres) pour rendre les résultats lisibles.</li>
+                            <li><strong>Analyse appliquée</strong> à la santé publique et à la consommation de médicaments.</li>
+                        </ul>
+
+                    </section>
+
+                </article>
+            </div>
+
+        </div>
+
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
