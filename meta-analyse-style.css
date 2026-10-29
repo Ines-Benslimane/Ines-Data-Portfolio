@@ -1,0 +1,149 @@
+/* ============================
+   META-ANALYSE — STYLE IDENTIQUE AUX AUTRES PROJETS
+   (à coller à la fin de assets/css/main.css)
+   ============================ */
+
+/* Conteneur principal */
+.post #project-meta-analyse {
+    background: #faf7f4;
+    padding: 3em 2em;
+    border-radius: 14px;
+    border: 1px solid #d8cfc7;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
+}
+
+/* Paragraphes */
+.post #project-meta-analyse p {
+    color: #3b2f2f;
+    line-height: 1.7;
+}
+
+/* Bloc chiffres clés */
+.post #project-meta-analyse .key-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    margin: 2.5em 0;
+    padding: 2em;
+    background: #f4ede7;
+    border-radius: 14px;
+    border: 1px solid #d8cfc7;
+    box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
+}
+
+.post #project-meta-analyse .stat {
+    text-align: center;
+}
+
+.post #project-meta-analyse .stat .number {
+    display: block;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #5a4634;
+}
+
+.post #project-meta-analyse .stat .label {
+    font-size: 0.95em;
+    color: #6b5644;
+}
+
+/* Tableaux */
+.post #project-meta-analyse .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5em 0;
+}
+
+.post #project-meta-analyse table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.post #project-meta-analyse .table-note {
+    font-size: 0.85em;
+    color: #6b5644;
+    margin-top: -0.8em;
+}
+
+/* Figures (version ordinateur : réduites et centrées) */
+.post #project-meta-analyse figure {
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+.post #project-meta-analyse figure img {
+    display: block;
+    width: 65%;
+    max-width: 65%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.post #project-meta-analyse figcaption {
+    font-size: 0.9em;
+    color: #6b5644;
+    margin-top: 0.6em;
+}
+
+/* ============================
+   VERSION MOBILE
+   ============================ */
+@media (max-width: 800px) {
+
+    .post #project-meta-analyse {
+        padding: 2em 1.2em;
+    }
+
+    /* Texte aligné à gauche : évite les grands espaces du texte justifié */
+    .post #project-meta-analyse p,
+    .post #project-meta-analyse li,
+    .post #project-meta-analyse figcaption {
+        text-align: left;
+        hyphens: none;
+    }
+
+    .post #project-meta-analyse .key-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1.5em;
+    }
+
+    .post #project-meta-analyse .stat .number {
+        font-size: 1.8em;
+    }
+
+    /* Figures pleine largeur */
+    .post #project-meta-analyse figure img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Tableaux compacts : le texte passe à la ligne, défilement horizontal en secours */
+    .post #project-meta-analyse table {
+        font-size: 0.8em;
+    }
+
+    .post #project-meta-analyse th,
+    .post #project-meta-analyse td {
+        padding: 0.6em 0.5em;
+        white-space: normal;
+    }
+
+    .post #project-meta-analyse th {
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: 1em;
+    }
+
+    .post #project-meta-analyse .results-table {
+        font-size: 0.75em;
+    }
+
+    .post #project-meta-analyse .results-table th,
+    .post #project-meta-analyse .results-table td {
+        padding: 0.6em 0.3em;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Méta-analyse bayésienne en réseau</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+
+    <body class="is-preload">
+
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Retour au portfolio</a>
+            </header>
+
+            <!-- Main -->
+            <div id="main">
+                <article class="post">
+
+                    <!-- Titre + accroche -->
+                    <header class="major">
+                        <h1>Méta-analyse bayésienne en réseau des ulcères veineux de jambe</h1>
+                        <p class="intro-quote">« Plusieurs traitements existent, mais presque aucun n’a été comparé directement aux autres. »</p>
+                    </header>
+
+                    <!-- Contenu du projet -->
+                    <section id="project-meta-analyse">
+
+                        <p>
+                            Les ulcères veineux de jambe sont des plaies chroniques, longues à cicatriser et
+                            coûteuses pour le système de santé. Ce projet compare l’efficacité de plusieurs
+                            stratégies thérapeutiques sur un critère commun, la cicatrisation complète, grâce à une
+                            méta-analyse bayésienne en réseau de 19 essais cliniques randomisés.
+                        </p>
+
+                        <!-- Bloc chiffres clés -->
+                        <div class="key-stats">
+                            <div class="stat">
+                                <span class="number">19</span>
+                                <span class="label">essais randomisés</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="number">4</span>
+                                <span class="label">traitements comparés</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="number">2,77</span>
+                                <span class="label">OR de la pentoxifylline vs placebo</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="number">0,83</span>
+                                <span class="label">SUCRA de la pentoxifylline</span>
+                            </div>
+                        </div>
+
+                        <h3>Objectif du projet</h3>
+                        <p>L’objectif est d’évaluer dans quelle mesure :</p>
+                        <ul>
+                            <li>les traitements pharmacologiques (pentoxifylline, sulodexide, MPFF) améliorent la cicatrisation par rapport au placebo ;</li>
+                            <li>il est possible de classer ces traitements entre eux malgré l’absence d’essais en face-à-face ;</li>
+                            <li>une stratégie interventionnelle (l’UGFS, sclérothérapie échoguidée par mousse) peut être intégrée au réseau.</li>
+                        </ul>
+
+                        <h3>Données et préparation</h3>
+                        <p>
+                            Les données proviennent de 19 essais randomisés à deux bras. Pour chaque bras,
+                            l’effectif total et le nombre de patients cicatrisés ont été extraits.
+                            Dix-huit essais comparent un médicament au placebo. Le 19<sup>e</sup> essai
+                            (Bishara, 2025) compare l’UGFS aux soins standards, assimilés au placebo pour
+                            relier le réseau.
+                        </p>
+
+                        <h3>Traitements comparés</h3>
+
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Traitement</th>
+                                        <th>Nature</th>
+                                        <th>Essais</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Pentoxifylline</strong></td>
+                                        <td>Médicament (hémorhéologique)</td>
+                                        <td>9</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>MPFF</strong></td>
+                                        <td>Médicament (phlébotonique)</td>
+                                        <td>5</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Sulodexide</strong></td>
+                                        <td>Médicament (glycosaminoglycane)</td>
+                                        <td>4</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>UGFS</strong></td>
+                                        <td>Intervention (sclérothérapie)</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>Méthodologie statistique</h3>
+                        <ul>
+                            <li>
+                                <strong>Modèle :</strong>
+                                loi binomiale, lien logit, effets aléatoires pour tenir compte de l’hétérogénéité entre essais.
+                            </li>
+
+                            <li>
+                                <strong>Estimation :</strong>
+                                méthodes MCMC sous OpenBUGS (réseau pharmacologique), puis sous R avec
+                                <code>gemtc</code>/JAGS (réseau élargi à l’UGFS), avec trois chaînes.
+                            </li>
+
+                            <li>
+                                <strong>Résultats :</strong>
+                                odds ratios avec intervalles de crédibilité à 95 %, probabilités de classement et valeurs SUCRA.
+                            </li>
+
+                            <li>
+                                <strong>Diagnostics :</strong>
+                                convergence des chaînes (trace plots), hétérogénéité, funnel plot,
+                                analyse fréquentiste complémentaire.
+                            </li>
+                        </ul>
+
+                        <h3>Visualisations</h3>
+                        <p>Trois visualisations illustrent ces résultats :</p>
+
+                        <figure>
+                            <img src="meta-reseau.png" alt="Réseau de preuve élargi : le placebo est relié à la pentoxifylline, au MPFF, au sulodexide et à l’UGFS">
+                            <figcaption>Réseau de preuve élargi : chaque nœud est un traitement, l’épaisseur des liens reflète le nombre d’essais.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="meta-forest.png" alt="Forest plot des odds ratios bayésiens de chaque traitement par rapport au placebo">
+                            <figcaption>Odds ratios bayésiens vs placebo (réseau élargi). L’intervalle très large de l’UGFS (1,71–411) reflète l’incertitude liée à un seul essai.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="meta-rankogram.png" alt="Rankogram : probabilité de chaque traitement d’occuper chaque rang">
+                            <figcaption>Rankogram : probabilité de chaque traitement d’occuper chaque rang, du 1<sup>er</sup> (barre foncée) au 5<sup>e</sup> (barre claire).</figcaption>
+                        </figure>
+
+                        <h3>Résultats principaux</h3>
+
+                        <div class="table-wrapper">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Traitement</th>
+                                        <th>OR</th>
+                                        <th>ICr 95 %</th>
+                                        <th>SUCRA</th>
+                                        <th>P(1<sup>er</sup>)</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Pentoxifylline</strong></td>
+                                        <td>2,77</td>
+                                        <td>1,81–4,38</td>
+                                        <td>0,83</td>
+                                        <td>55,2 %</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Sulodexide</strong></td>
+                                        <td>2,55</td>
+                                        <td>1,42–4,68</td>
+                                        <td>0,74</td>
+                                        <td>39,3 %</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>MPFF</strong></td>
+                                        <td>1,86</td>
+                                        <td>1,15–3,10</td>
+                                        <td>0,43</td>
+                                        <td>5,5 %</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Placebo</strong></td>
+                                        <td>1,00</td>
+                                        <td>—</td>
+                                        <td>0,00</td>
+                                        <td>0,0 %</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>UGFS*</strong></td>
+                                        <td>≈ 15</td>
+                                        <td>1,71–411</td>
+                                        <td>—</td>
+                                        <td>—</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="table-note">
+                            OR : odds ratio vs placebo. ICr : intervalle de crédibilité à 95 %. P(1<sup>er</sup>) : probabilité d’être le meilleur traitement. Médicaments : réseau initial (18 essais).
+                            *UGFS : réseau élargi, un seul essai, résultat exploratoire.
+                        </p>
+
+                        <h3>Principaux enseignements</h3>
+                        <ul>
+                            <li>La <strong>pentoxifylline</strong> est le médicament le plus efficace, suivie du <strong>sulodexide</strong> et du <strong>MPFF</strong>.</li>
+                            <li>Les trois médicaments sont significativement supérieurs au placebo, et leurs estimations restent stables après l’ajout de l’UGFS.</li>
+                            <li>L’<strong>UGFS</strong> ressort première (OR d’environ 15), mais son intervalle de crédibilité est très large : elle repose sur un seul essai et ce résultat reste exploratoire.</li>
+                            <li>Le principal point de vigilance est la comparabilité des essais, notamment l’assimilation des soins standards au placebo.</li>
+                        </ul>
+
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li>Biostatistique bayésienne et méta-analyse en réseau (R, OpenBUGS, <code>gemtc</code>/JAGS).</li>
+                            <li>Méthodes MCMC et diagnostics de convergence.</li>
+                            <li>Lecture critique d’essais cliniques randomisés.</li>
+                            <li>Visualisation de résultats (forest plots, rankograms).</li>
+                        </ul>
+
+                    </section>
+
+                </article>
+            </div>
+
+        </div>
+
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
