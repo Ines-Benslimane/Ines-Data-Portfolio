@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Chirurgie maternelle et poids de naissance</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="project-chirurgie-maternelle-style.css" />
+    </head>
+
+    <body class="is-preload">
+
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Retour au portfolio</a>
+            </header>
+
+            <!-- Main -->
+            <div id="main">
+                <article class="post">
+
+                    <!-- Titre + accroche -->
+                    <header class="major">
+                        <h1>Chirurgie maternelle et poids de naissance</h1>
+                        <p class="intro-quote">« À âge gestationnel égal, les enfants conçus après la chirurgie bariatrique de leur mère pèsent en moyenne 270 g de moins à la naissance. »</p>
+                    </header>
+
+                    <!-- Contenu du projet -->
+                    <section id="project-chirurgie-maternelle">
+
+                        <p>
+                            La chirurgie bariatrique permet à de nombreuses femmes en situation d’obésité de perdre
+                            du poids avant une grossesse. Cette étude exploratoire s’intéresse à ce que cela change
+                            pour l’enfant : le poids de naissance diffère-t-il selon que la mère a été opérée
+                            <strong>avant</strong> ou <strong>après</strong> la conception ?
+                        </p>
+                        <p>
+                            <em>Analyse exploratoire menée sur des extraits pseudonymisés de données hospitalières
+                            dans le cadre du Master 2. Seuls des résultats agrégés sont présentés.</em>
+                        </p>
+
+                        <!-- Bloc chiffres clés -->
+                        <div class="key-stats">
+                            <div class="stat">
+                                <span class="number">1 932</span>
+                                <span class="label">mères opérées</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="number">2 859</span>
+                                <span class="label">naissances analysées</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="number">−314 g</span>
+                                <span class="label">poids de naissance moyen (ajusté)</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="number">0,26</span>
+                                <span class="label">OR ajusté de macrosomie</span>
+                            </div>
+                        </div>
+
+                        <h3>Objectif du projet</h3>
+                        <p>L’objectif est d’évaluer dans quelle mesure :</p>
+                        <ul>
+                            <li>le poids de naissance des enfants conçus après la chirurgie de leur mère diffère de celui des enfants nés avant ;</li>
+                            <li>cette différence se retrouve sur le risque de petit poids (&lt; 2 500 g) et de macrosomie (≥ 4 000 g) ;</li>
+                            <li>elle persiste quand on compare des frères et sœurs d’une même mère, et selon le délai entre la chirurgie et la conception.</li>
+                        </ul>
+
+                        <h3>Données et préparation</h3>
+                        <p>
+                            Deux fichiers hospitaliers pseudonymisés (codage CIM-10 et CCAM) ont été reliés par
+                            l’identifiant de la mère : un fichier <strong>mères</strong> (séjour de chirurgie, âge à
+                            l’accouchement, diagnostics obstétricaux) et un fichier <strong>enfants</strong>
+                            (sexe, âge gestationnel, poids, diagnostics néonataux). Les deux fichiers comportent une
+                            ligne par diagnostic ; ils ont été ramenés à une ligne par enfant. Les dates sont
+                            tronquées au mois.
+                        </p>
+
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Étape</th>
+                                        <th>Enfants</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Enfants dans le fichier (2 000 mères)</td>
+                                        <td>3 658</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Exclus : attributs contradictoires pour un même enfant (poids, âge gestationnel…)</td>
+                                        <td>− 96</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Exclus : 25 identifiants « mère » partagés (de 5 à 276 enfants chacun)</td>
+                                        <td>− 650</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Exclus : accouchement non retrouvé (âge maternel manquant)</td>
+                                        <td>− 41</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Exclus : chirurgie pendant la grossesse ou le même mois</td>
+                                        <td>− 12</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Enfants analysés (1 932 mères)</strong></td>
+                                        <td><strong>2 859</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>Exposition et critères de jugement</h3>
+                        <p>
+                            <strong>Exposition.</strong> Le moment de la conception par rapport à la chirurgie, estimé
+                            à partir de la date de naissance et de l’âge gestationnel :
+                        </p>
+                        <ul>
+                            <li><strong>Avant :</strong> enfant né avant la chirurgie de sa mère (n = 1 756) ;</li>
+                            <li><strong>Après :</strong> enfant conçu après la chirurgie (n = 1 103), découpé en trois délais : moins de 12 mois (n = 250), 12 à 23 mois (n = 324), 24 mois ou plus (n = 529).</li>
+                        </ul>
+                        <p>
+                            <strong>Critères.</strong> Poids de naissance (g), poids &lt; 2 500 g, poids ≥ 4 000 g,
+                            naissance avant 37 semaines, et « petit » ou « gros » pour l’âge gestationnel d’après les
+                            codes diagnostiques néonataux (CIM-10 P05.0-P05.1 et P08.0-P08.1).
+                        </p>
+
+                        <h3>Méthodologie statistique</h3>
+                        <ul>
+                            <li>
+                                <strong>Poids de naissance :</strong>
+                                régression linéaire, avec erreurs standards robustes regroupées par mère
+                                (plusieurs enfants d’une même mère ne sont pas indépendants).
+                            </li>
+
+                            <li>
+                                <strong>Critères binaires :</strong>
+                                régression logistique, odds ratios (OR) bruts et ajustés, mêmes erreurs standards.
+                            </li>
+
+                            <li>
+                                <strong>Ajustement :</strong>
+                                sexe de l’enfant, âge de la mère, rang de naissance, naissance multiple, année de
+                                naissance, type de chirurgie (sleeve, bypass, anneau).
+                            </li>
+
+                            <li>
+                                <strong>« À âge gestationnel égal » :</strong>
+                                ajout de l’âge gestationnel en semaines, pour séparer l’effet sur la durée de grossesse
+                                de l’effet sur la croissance.
+                            </li>
+
+                            <li>
+                                <strong>Comparaison intra-mère :</strong>
+                                modèle à effets fixes « mère » sur les 223 mères ayant des enfants nés avant et après la
+                                chirurgie (501 enfants), qui neutralise tout ce qui est stable au sein d’une famille.
+                            </li>
+
+                            <li>
+                                <strong>Sensibilité :</strong>
+                                naissances uniques seulement, naissances à terme, sleeve seule, bypass seul.
+                            </li>
+                        </ul>
+
+                        <h3>Résultats</h3>
+
+                        <h4>Description des deux groupes</h4>
+                        <div class="table-wrapper">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Caractéristique</th>
+                                        <th>Avant</th>
+                                        <th>Après</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr><td>Enfants</td><td>1 756</td><td>1 103</td></tr>
+                                    <tr><td>Poids moyen, g (écart-type)</td><td>3 422 (547)</td><td>3 153 (539)</td></tr>
+                                    <tr><td>Âge gestationnel moyen, SA</td><td>39,0</td><td>38,8</td></tr>
+                                    <tr><td>Filles, %</td><td>48,9</td><td>47,6</td></tr>
+                                    <tr><td>Naissances multiples, %</td><td>1,8</td><td>2,4</td></tr>
+                                    <tr><td>Âge maternel moyen, ans</td><td>29,0</td><td>30,8</td></tr>
+                                    <tr><td>Année de naissance moyenne</td><td>2013,9</td><td>2016,1</td></tr>
+                                    <tr><td>Chirurgie : sleeve / bypass / anneau, %</td><td>66 / 27 / 7</td><td>53 / 25 / 20</td></tr>
+                                    <tr><td>Diabète gestationnel, %</td><td>19,4</td><td>9,2</td></tr>
+                                    <tr><td>Troubles hypertensifs, %</td><td>9,6</td><td>3,5</td></tr>
+                                    <tr><td>Obésité codée au séjour, %</td><td>28,4</td><td>16,8</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="table-note">
+                            Avant : enfants nés avant la chirurgie de leur mère. Après : enfants conçus après la chirurgie.
+                        </p>
+
+                        <h4>Distribution du poids de naissance</h4>
+                        <figure>
+                            <a href="chir-fig1.png" target="_blank"><img src="chir-fig1.png" alt="Distribution du poids de naissance : la courbe des enfants conçus après la chirurgie est décalée vers des poids plus faibles (moyenne 3 153 g contre 3 422 g)"></a>
+                            <figcaption>Distribution du poids de naissance. Les lignes pointillées indiquent les moyennes de chaque groupe. Toucher l’image pour l’agrandir.</figcaption>
+                        </figure>
+                        <p>
+                            La distribution entière se décale vers le bas : −270 g en moyenne (IC à 95 % : −313 à −226),
+                            et −314 g après ajustement (−367 à −261). À âge gestationnel égal, l’écart est de −270 g
+                            (−313 à −227) : une partie de la différence passe par un âge gestationnel un peu plus court,
+                            mais l’essentiel correspond à des enfants plus petits à terme égal.
+                        </p>
+
+                        <h4>Petits poids et macrosomie</h4>
+                        <figure>
+                            <a href="chir-fig2.png" target="_blank"><img src="chir-fig2.png" alt="Proportion d’enfants par critère, avant et après la chirurgie : plus de petits poids, moins de macrosomie"></a>
+                            <figcaption>Proportion d’enfants selon le critère (barres d’erreur : IC à 95 %).</figcaption>
+                        </figure>
+
+                        <div class="table-wrapper">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Critère</th>
+                                        <th>Avant</th>
+                                        <th>Après</th>
+                                        <th>OR ajusté [IC 95 %]</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr><td>Poids &lt; 2 500 g</td><td>4,1 %</td><td>8,3 %</td><td>2,17 [1,39 – 3,39]</td></tr>
+                                    <tr><td>Petit pour l’âge gest. (codé)</td><td>3,5 %</td><td>6,7 %</td><td>2,02 [1,31 – 3,12]</td></tr>
+                                    <tr><td>Naissance &lt; 37 SA</td><td>6,0 %</td><td>6,6 %</td><td>1,12 [0,73 – 1,74]</td></tr>
+                                    <tr><td>Gros pour l’âge gest. (codé)</td><td>9,1 %</td><td>3,7 %</td><td>0,33 [0,21 – 0,53]</td></tr>
+                                    <tr><td>Poids ≥ 4 000 g</td><td>12,7 %</td><td>4,7 %</td><td>0,26 [0,18 – 0,38]</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h4>Robustesse des résultats</h4>
+                        <figure>
+                            <a href="chir-fig3.png" target="_blank"><img src="chir-fig3.png" alt="Écart de poids de naissance et intervalles de confiance selon le modèle, le délai chirurgie-conception et les analyses de sensibilité"></a>
+                            <figcaption>Écart de poids de naissance par rapport aux enfants nés avant la chirurgie, selon le modèle.</figcaption>
+                        </figure>
+                        <p>
+                            L’écart reste compris entre −270 g et −365 g dans tous les modèles. La comparaison
+                            <strong>intra-mère</strong> donne −365 g (−582 à −148) : le résultat ne s’explique donc pas
+                            seulement par des différences entre familles, même si l’intervalle est large (223 mères).
+                            L’écart ne varie pas nettement avec le délai entre la chirurgie et la conception
+                            (−319 g, −282 g, −340 g).
+                        </p>
+
+                        <h3>Principaux enseignements</h3>
+                        <ul>
+                            <li>Les enfants conçus après la chirurgie pèsent en moyenne <strong>270 à 314 g de moins</strong> à la naissance (selon l’ajustement), avec environ <strong>deux fois plus de poids &lt; 2 500 g</strong> (OR = 2,17).</li>
+                            <li>La <strong>macrosomie est près de trois fois moins fréquente</strong> (12,7 % contre 4,7 % ; OR = 0,26), tout comme les enfants gros pour l’âge gestationnel (OR = 0,33).</li>
+                            <li>Les <strong>naissances prématurées</strong> ne diffèrent pas nettement (OR = 1,12 ; IC 0,73–1,74) : l’écart de poids n’est pas qu’une question de prématurité.</li>
+                            <li>Les mères ont aussi moins de <strong>diabète gestationnel</strong> (19,4 % contre 9,2 %) et de <strong>troubles hypertensifs</strong> (9,6 % contre 3,5 %). Ces tendances vont dans le sens de ce que rapporte la littérature sur la chirurgie bariatrique.</li>
+                            <li>Le décalage de la distribution est favorable pour la macrosomie et ses complications, mais il augmente la part de petits poids : un équilibre à surveiller en suivi de grossesse.</li>
+                        </ul>
+
+                        <h3>Limites et perspectives</h3>
+                        <ul>
+                            <li><strong>Pas de groupe de mères non opérées.</strong> La comparaison porte sur des enfants nés avant ou après la chirurgie, ce qui ne permet pas de séparer l’effet de la chirurgie de celui du temps (âge de la mère, année, rang de naissance). L’ajustement et la comparaison intra-mère limitent ce biais, sans l’éliminer.</li>
+                            <li><strong>Variables absentes :</strong> IMC avant la grossesse, prise de poids gestationnelle, tabagisme, taille et périmètre crânien de l’enfant (seul le poids est disponible).</li>
+                            <li><strong>Mesure :</strong> « petit » et « gros » pour l’âge gestationnel reposent sur des codes diagnostiques, probablement sous-déclarés ; les dates sont tronquées au mois, ce qui rend la date de conception approximative (±1 mois).</li>
+                            <li><strong>Qualité des données :</strong> des identifiants partagés et des attributs contradictoires ont dû être exclus (746 enfants, soit 20 %), ce qui peut introduire une sélection.</li>
+                            <li><strong>Interprétation :</strong> ce sont des associations, pas une preuve de causalité. Une suite naturelle serait d’ajouter un groupe de mères non opérées appariées sur l’IMC, et des courbes de croissance de référence pour définir petit et gros pour l’âge gestationnel.</li>
+                        </ul>
+
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li>Préparation de données hospitalières : liaison mère-enfant, détection d’anomalies, règles d’exclusion documentées (Python, <code>pandas</code>).</li>
+                            <li>Conception d’une étude observationnelle : définition de l’exposition, comparaison intra-mère, analyses de sensibilité.</li>
+                            <li>Modélisation : régressions linéaire et logistique à erreurs robustes (<code>statsmodels</code>, <code>scipy</code>).</li>
+                            <li>Visualisation de résultats épidémiologiques (<code>matplotlib</code>).</li>
+                            <li>Regard critique sur les biais et les limites des données de santé.</li>
+                        </ul>
+
+                    </section>
+
+                </article>
+            </div>
+
+        </div>
+
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
