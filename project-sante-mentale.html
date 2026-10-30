@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Santé mentale et santé cardiovasculaire</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="project-sante-mentale-style.css" />
+    </head>
+
+    <body class="is-preload">
+
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Retour au portfolio</a>
+            </header>
+
+            <!-- Main -->
+            <div id="main">
+                <article class="post">
+
+                    <!-- Titre + accroche -->
+                    <header class="major">
+                        <h1>Santé mentale et maladies du cœur : une approche prédictive</h1>
+                        <p class="intro-quote">« 12,1 % des personnes interrogées déclarent au moins 14 jours de mauvaise santé mentale sur les 30 derniers jours. »</p>
+                    </header>
+
+                    <!-- Contenu du projet -->
+                    <section id="project-sante-mentale">
+
+                        <p>
+                            Le BRFSS du CDC est une grande enquête américaine sur la santé et les habitudes de vie,
+                            le plus souvent utilisée pour prédire la présence d’une maladie cardiovasculaire.
+                            Ce projet renverse la question : existe-t-il un lien entre santé mentale et santé
+                            cardiovasculaire dans ces données, et peut-on prédire une détresse mentale fréquente
+                            à partir des informations disponibles ?
+                        </p>
+
+                        <!-- Bloc chiffres clés -->
+                        <div class="key-stats">
+                            <div class="stat">
+                                <span class="number">319 795</span>
+                                <span class="label">personnes interrogées</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="number">12,1 %</span>
+                                <span class="label">en détresse mentale fréquente</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="number">≥ 14 j</span>
+                                <span class="label">seuil du CDC sur 30 jours</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="number">0,787</span>
+                                <span class="label">AUC-ROC du Random Forest</span>
+                            </div>
+                        </div>
+
+                        <h3>Objectif du projet</h3>
+                        <p>L’objectif est de :</p>
+                        <ul>
+                            <li>explorer le lien entre détresse mentale, santé physique et santé cardiovasculaire ;</li>
+                            <li>construire un modèle prédictif de la détresse mentale fréquente ;</li>
+                            <li>identifier, grâce à SHAP, les variables qui pèsent le plus dans les prédictions.</li>
+                        </ul>
+
+                        <h3>Données et préparation</h3>
+                        <p>
+                            Le jeu de données <code>heart_2020_cleaned</code>, issu du BRFSS, contient
+                            319 795 personnes et 18 variables. J’en ai gardé 14, en retirant celles qui servaient
+                            moins la question (origine, asthme, maladie rénale, cancer de la peau), afin de
+                            conserver une analyse ciblée.
+                        </p>
+                        <p>
+                            <strong>Variable cible.</strong> Plutôt que d’utiliser <code>HeartDisease</code>,
+                            j’ai créé <code>FrequentMentalDistress</code> à partir de <code>MentalHealth</code> :
+                            elle vaut 1 si la personne déclare 14 jours ou plus de mauvaise santé mentale sur
+                            30 (seuil utilisé par le CDC), 0 sinon. <code>HeartDisease</code> devient alors
+                            une variable explicative parmi les autres. <code>MentalHealth</code> est retirée
+                            des variables explicatives, pour éviter que le modèle ne retrouve la cible
+                            à partir de la variable qui la définit.
+                        </p>
+                        <p>
+                            <strong>Choix de nettoyage.</strong> Aucune ligne n’a été supprimée : les lignes
+                            identiques sont conservées, car plusieurs personnes peuvent avoir exactement le
+                            même profil dans une enquête à nombre de variables limité, et les valeurs élevées
+                            de <code>MentalHealth</code> ne sont pas des erreurs mais précisément les cas qui
+                            m’intéressent.
+                        </p>
+
+                        <h3>Variables explicatives</h3>
+
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Variable</th>
+                                        <th>Signification</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td><code>PhysicalHealth</code></td>
+                                        <td>Jours de mauvaise santé physique sur les 30 derniers jours</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><code>GenHealth</code></td>
+                                        <td>Santé générale déclarée (de « Poor » à « Excellent », variable ordonnée)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><code>AgeCategory</code></td>
+                                        <td>Tranche d’âge (variable ordonnée)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><code>Sex</code></td>
+                                        <td>Sexe (binaire)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><code>SleepTime</code>, <code>BMI</code></td>
+                                        <td>Heures de sommeil par nuit, indice de masse corporelle</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><code>HeartDisease</code>, <code>Stroke</code>, <code>Diabetic</code></td>
+                                        <td>Maladie cardiovasculaire, AVC et diabète déclarés</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><code>Smoking</code>, <code>AlcoholDrinking</code>, <code>PhysicalActivity</code></td>
+                                        <td>Tabagisme, consommation d’alcool, activité physique</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><code>DiffWalking</code></td>
+                                        <td>Difficulté à marcher ou à monter les escaliers</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>Méthodologie</h3>
+                        <ul>
+                            <li>
+                                <strong>Prétraitement :</strong>
+                                variables oui/non encodées en 0/1, santé générale et âge transformés en variables ordonnées.
+                            </li>
+
+                            <li>
+                                <strong>Découpage :</strong>
+                                80 % pour l’entraînement et 20 % pour le test, avec une séparation stratifiée
+                                pour conserver la même proportion de détresse mentale dans les deux groupes.
+                            </li>
+
+                            <li>
+                                <strong>Modèle :</strong>
+                                Random Forest de 200 arbres (profondeur maximale de 10) avec
+                                <code>class_weight="balanced"</code>, car la classe positive ne représente que 12,1 % des données.
+                            </li>
+
+                            <li>
+                                <strong>Évaluation :</strong>
+                                AUC-ROC sur l’échantillon de test.
+                            </li>
+
+                            <li>
+                                <strong>Explicabilité :</strong>
+                                SHAP (<code>TreeExplainer</code>) pour mesurer l’influence de chaque variable sur les prédictions.
+                            </li>
+                        </ul>
+
+                        <h3>Analyse descriptive</h3>
+                        <p>Avant la modélisation, le taux de détresse mentale fréquente a été comparé selon l’âge, le sexe et la présence d’une maladie cardiovasculaire.</p>
+
+                        <figure>
+                            <img src="sante-age.png" alt="Proportion de personnes en détresse mentale fréquente par tranche d’âge, en baisse de 19,5 % chez les 18-24 ans à 5,8 % chez les 80 ans et plus">
+                            <figcaption>Le taux de détresse mentale fréquente baisse avec l’âge : de 19,5 % chez les 18-24 ans à 5,8 % chez les 80 ans et plus.</figcaption>
+                        </figure>
+
+                        <figure class="small">
+                            <img src="sante-sexe.png" alt="Proportion de personnes en détresse mentale fréquente selon le sexe : 14,7 % des femmes et 9,3 % des hommes">
+                            <figcaption>14,7 % des femmes contre 9,3 % des hommes.</figcaption>
+                        </figure>
+
+                        <figure class="small">
+                            <img src="sante-coeur.png" alt="Proportion de personnes en détresse mentale fréquente selon la présence d’une maladie cardiovasculaire : 15,5 % contre 11,8 %">
+                            <figcaption>15,5 % avec une maladie cardiovasculaire contre 11,8 % sans.</figcaption>
+                        </figure>
+
+                        <h3>Modélisation et explicabilité</h3>
+                        <p>
+                            Le Random Forest obtient une <strong>AUC-ROC de 0,787</strong> sur l’échantillon de test :
+                            les variables disponibles contiennent un vrai signal pour distinguer les personnes
+                            avec et sans détresse mentale fréquente. L’analyse SHAP montre quelles variables
+                            jouent le plus dans les prédictions.
+                        </p>
+
+                        <figure>
+                            <img src="sante-shap-bar.png" alt="Importance moyenne des variables selon SHAP : PhysicalHealth, AgeCategory, SleepTime, GenHealth et Sex en tête">
+                            <figcaption>Importance moyenne des variables (SHAP) : la santé physique et l’âge arrivent en tête.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="sante-shap-points.png" alt="Graphique SHAP détaillant l’effet de chaque variable sur la prédiction de détresse mentale">
+                            <figcaption>Effet de chaque variable sur la prédiction : chaque point est une personne, la couleur indique la valeur de la variable (rouge = élevée, bleu = faible).</figcaption>
+                        </figure>
+
+                        <h3>Principaux enseignements</h3>
+                        <ul>
+                            <li>La <strong>santé physique</strong> (<code>PhysicalHealth</code>) est la variable la plus influente : plus le nombre de jours de mauvaise santé physique est élevé, plus le modèle prédit une détresse mentale fréquente.</li>
+                            <li>L’<strong>âge</strong> arrive ensuite, avec des tranches plus jeunes associées à plus de détresse, puis le <strong>sommeil</strong>, la <strong>santé générale</strong> déclarée et le <strong>sexe</strong>, avec des prédictions plus élevées chez les femmes.</li>
+                            <li>Les facteurs de mode de vie (<strong>tabagisme</strong>) et la <strong>difficulté à marcher</strong> viennent ensuite, avec un effet plus modéré.</li>
+                            <li>La <strong>maladie cardiovasculaire</strong> est associée à un taux de détresse plus élevé dans les données brutes (15,5 % contre 11,8 %), mais elle pèse très peu dans les prédictions une fois la santé physique, l’âge et la santé générale pris en compte.</li>
+                        </ul>
+
+                        <h3>Limites et perspectives</h3>
+                        <p>
+                            Les données sont transversales (une photographie à un instant donné) et déclaratives :
+                            on observe des associations statistiques, pas des relations de cause à effet, et ce
+                            qui est déclaré peut différer de l’état de santé réel. Une suite naturelle serait
+                            d’utiliser des données longitudinales, qui suivent les mêmes personnes pendant
+                            plusieurs années, pour travailler sur la prédiction des trajectoires de santé.
+                        </p>
+
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li>Construction d’une variable cible et gestion d’un déséquilibre de classes (Python, <code>pandas</code>, <code>scikit-learn</code>).</li>
+                            <li>Modélisation prédictive avec un Random Forest, évaluée par l’AUC-ROC.</li>
+                            <li>Explicabilité des modèles (<code>shap</code>).</li>
+                            <li>Visualisation de données (<code>matplotlib</code>, <code>seaborn</code>).</li>
+                            <li>Regard critique sur les données de santé : données transversales, déclaratives, choix de nettoyage justifiés.</li>
+                        </ul>
+
+                    </section>
+
+                </article>
+            </div>
+
+        </div>
+
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

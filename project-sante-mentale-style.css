@@ -1,0 +1,161 @@
+/* ============================
+   SANTÉ MENTALE — STYLE IDENTIQUE AUX AUTRES PROJETS
+   ============================ */
+
+/* Conteneur principal */
+.post #project-sante-mentale {
+    background: #faf7f4;
+    padding: 3em 2em;
+    border-radius: 14px;
+    border: 1px solid #d8cfc7;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(90, 70, 52, 0.08);
+}
+
+/* Paragraphes */
+.post #project-sante-mentale p {
+    color: #3b2f2f;
+    line-height: 1.7;
+}
+
+/* Bloc chiffres clés */
+.post #project-sante-mentale .key-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    margin: 2.5em 0;
+    padding: 2em;
+    background: #f4ede7;
+    border-radius: 14px;
+    border: 1px solid #d8cfc7;
+    box-shadow: 0 4px 12px rgba(90, 70, 52, 0.08);
+}
+
+.post #project-sante-mentale .stat {
+    text-align: center;
+}
+
+.post #project-sante-mentale .stat .number {
+    display: block;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #5a4634;
+}
+
+.post #project-sante-mentale .stat .label {
+    font-size: 0.95em;
+    color: #6b5644;
+}
+
+/* Tableaux */
+.post #project-sante-mentale .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5em 0;
+}
+
+.post #project-sante-mentale table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.post #project-sante-mentale .table-note {
+    font-size: 0.85em;
+    color: #6b5644;
+    margin-top: -0.8em;
+}
+
+/* Figures (version ordinateur : réduites et centrées) */
+.post #project-sante-mentale figure {
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+.post #project-sante-mentale figure img {
+    display: block;
+    width: 65%;
+    max-width: 65%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.post #project-sante-mentale figcaption {
+    font-size: 0.9em;
+    color: #6b5644;
+    margin-top: 0.6em;
+}
+
+/* ============================
+   VERSION MOBILE
+   ============================ */
+@media (max-width: 800px) {
+
+    .post #project-sante-mentale {
+        padding: 2em 1.2em;
+    }
+
+    /* Texte aligné à gauche : évite les grands espaces du texte justifié */
+    .post #project-sante-mentale p,
+    .post #project-sante-mentale li,
+    .post #project-sante-mentale figcaption {
+        text-align: left;
+        hyphens: none;
+    }
+
+    .post #project-sante-mentale .key-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1.5em;
+    }
+
+    .post #project-sante-mentale .stat .number {
+        font-size: 1.8em;
+    }
+
+    /* Figures pleine largeur */
+    .post #project-sante-mentale figure img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Tableaux compacts : le texte passe à la ligne, défilement horizontal en secours */
+    .post #project-sante-mentale table {
+        font-size: 0.8em;
+    }
+
+    .post #project-sante-mentale th,
+    .post #project-sante-mentale td {
+        padding: 0.6em 0.5em;
+        white-space: normal;
+    }
+
+    .post #project-sante-mentale th {
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: 1em;
+    }
+
+    .post #project-sante-mentale .results-table {
+        font-size: 0.75em;
+    }
+
+    .post #project-sante-mentale .results-table th,
+    .post #project-sante-mentale .results-table td {
+        padding: 0.6em 0.3em;
+        white-space: nowrap;
+    }
+}
+
+/* Graphiques carrés (sexe, cœur) : plus petits que les graphiques larges */
+.post #project-sante-mentale figure.small img {
+    width: 42%;
+    max-width: 42%;
+}
+
+@media (max-width: 800px) {
+    .post #project-sante-mentale figure.small img {
+        width: 85%;
+        max-width: 85%;
+    }
+}
